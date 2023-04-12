@@ -5,18 +5,23 @@ import { UndoOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 const Style = {
   Header: styled.div`
-    position: fixed;
+    position: sticky;
+    top: 0;
+    height: 80px;
     width: 100%;
     background: #00b578;
     font-family: NotoSansKR-700;
-    font-size: 1.2vw; //1.5rem;
-    padding: 0.8%;
+    font-size: 24px; //1.5rem;
+    padding-left: 20px;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     @media only screen and (max-width: 768px) {
       /* 모바일에서는 Logo와 Redo를 가운데와 오른쪽 끝으로 정렬 */
+      font-size: 16px;
+      padding-left: 0;
+      height: 50px;
       justify-content: center;
     }
   `,
