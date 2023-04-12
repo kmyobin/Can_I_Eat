@@ -7,33 +7,61 @@ const Style = {
   Header: styled.div`
     position: fixed;
     width: 100%;
-    //height: 70px;
     background: #00b578;
     font-family: NotoSansKR-700;
     font-size: 1.2vw; //1.5rem;
-    padding: 1%;
+    padding: 0.8%;
     color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media only screen and (max-width: 768px) {
+      /* 모바일에서는 Logo와 Redo를 가운데와 오른쪽 끝으로 정렬 */
+      justify-content: center;
+    }
   `,
   Logo: styled.div`
-    float: left;
-    width: 50%;
+    @media only screen and (min-width: 769px) {
+      // 노트북, 데스크탑
+      float: left;
+      width: 50%;
+    }
+    @media only screen and (max-width: 768px) {
+      // 모바일
+      float: none;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
   `,
   Redo: styled.div`
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 30px;
+    padding-right: 3%;
+    padding-left: 3%;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    font-size: 100%;
+    @media only screen and (max-width: 768px) {
+      /* 모바일에서는 Redo를 오른쪽 끝에 배치 */
+      position: absolute;
+      right: 1%;
+    }
   `,
 };
+
 function Header() {
   const navigate = useNavigate();
   const onClickUndo = () => {
     navigate("/");
   };
+  let Lo = window.location.href;
   return (
     <Style.Header>
       <Style.Logo>Can I Eat?</Style.Logo>
       <Style.Redo>
-        <UndoOutlined onClick={onClickUndo} />
+        {/* 선택 페이지나 결과 페이지에서만 Redo 버튼 활성화 */}
+        {(Lo.includes("/select") || Lo.includes("/result")) && (
+          <UndoOutlined onClick={onClickUndo} />
+        )}
       </Style.Redo>
     </Style.Header>
   );
