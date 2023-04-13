@@ -12,7 +12,7 @@ const Style = {
     background: #00b578;
     font-family: NotoSansKR-700;
     font-size: 24px; //1.5rem;
-    padding-left: 20px;
+    //padding-left: 20px;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ const Style = {
     @media only screen and (max-width: 768px) {
       /* 모바일에서는 Logo와 Redo를 가운데와 오른쪽 끝으로 정렬 */
       font-size: 16px;
-      padding-left: 0;
+      padding: 0;
       height: 50px;
       justify-content: center;
     }
@@ -29,6 +29,7 @@ const Style = {
     @media only screen and (min-width: 769px) {
       // 노트북, 데스크탑
       float: left;
+      padding: 1%; // Logo에 padding 추가하면 가로 스크롤바 해결
       width: 50%;
     }
     @media only screen and (max-width: 768px) {
