@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SearchItem from "./SearchItem";
 
 const SearchListWrapper = styled.div`
   display: flex;
@@ -31,21 +32,13 @@ const SearchScrollBox = styled.div`
     background: #ddd;
   }
 `;
-const SearchItem = styled.div`
-  width: 100%;
-  height: 68px;
-  margin-bottom: 25px;
-  background: #F5F5F5;
-  border-radius: 10px;
-`;
+
 
 function SearchList() {
     return (
         <SearchListWrapper>
             <SearchScrollBox>
-                <SearchItem>
-
-                </SearchItem>
+                <SearchItem/>
                 <SearchItem/>
                 <SearchItem/>
                 <SearchItem/>
