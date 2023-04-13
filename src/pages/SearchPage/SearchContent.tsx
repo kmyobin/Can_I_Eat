@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import SearchForm from "./SearchForm";
 import SearchList from "./SearchList";
@@ -13,9 +13,17 @@ const Wrapper = styled.div`
 `;
 
 function SearchContent() {
+    const [searchKeyword, setSearchKeyword] = useState<string>('');
+
+    const handleSearchKeywordChange = (newSearchKeyword: string) => {
+        setSearchKeyword(newSearchKeyword);
+    };
+
     return (
         <Wrapper>
-            <SearchForm/>
+            <SearchForm
+                searchKeyword = {searchKeyword}
+                handleSearchKeywordChange = {handleSearchKeywordChange}/>
             <SearchList/>
         </Wrapper>
     );

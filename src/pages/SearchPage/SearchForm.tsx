@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import magnifyImg from '../../assets/images/magnify.png';
+import axios from "axios";
 
 const SearchFormWrapper = styled.div`
   display: flex;
@@ -50,15 +51,34 @@ const SearchButton = styled.button`
   color: #fff;
 `;
 
-function SearchForm() {
+type SearchFormProps = {
+    searchKeyword: string
+    handleSearchKeywordChange: (newSearchKeyword: string) => void;
+}
+
+function SearchForm({handleSearchKeywordChange, searchKeyword} : SearchFormProps) {
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        handleSearchKeywordChange(event.target.value);
+    }
+    const handleFetch = async () => {
+        const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/a8b59a63ce2040ccb118/C002/json/1/100/PRDLST_NM=${searchKeyword}`);
+        console.log(response);
+    }
+
     return (
         <SearchFormWrapper>
             <SearchHeading>
                 이제 식품을 검색해주세요!
             </SearchHeading>
-            <SearchInput placeholder={"원하는 식품을 입력해주세요."} />
+            <SearchInput
+                onChange={handleChange}
+                placeholder={"원하는 식품을 입력해주세요."}
+            />
 
-            <SearchButton>
+            <SearchButton
+                onClick={handleFetch}
+            >
                 검색
             </SearchButton>
         </SearchFormWrapper>
