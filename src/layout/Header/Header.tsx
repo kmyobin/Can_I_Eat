@@ -8,7 +8,7 @@ const Style = {
     position: sticky;
     top: 0;
     height: 80px;
-    width: 100%;
+    width: 100vw;
     background: #00b578;
     font-family: NotoSansKR-700;
     font-size: 24px; //1.5rem;
