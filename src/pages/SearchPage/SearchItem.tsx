@@ -36,16 +36,21 @@ const SearchItemCompany = styled.div`
   color: #999;
 `;
 
-function SearchItem() {
+type SearchItemProps = {
+    name : string;
+    company: string;
+}
+
+function SearchItem({name, company} : SearchItemProps) {
     return (
         <SearchItemWrapper>
             <SearchItemImage/>
             <SearchItemInfo>
                 <SearchItemName>
-                    GFS 우리집 도시락 제육볶음 정식
+                    {name}
                 </SearchItemName>
                 <SearchItemCompany>
-                    (주) 굿푸드 시스템템
+                    {company}
                 </SearchItemCompany>
             </SearchItemInfo>
         </SearchItemWrapper>

@@ -50,20 +50,14 @@ const SearchButton = styled.button`
   font-weight: 500;
   color: #fff;
 `;
-
-type SearchFormProps = {
-    searchKeyword: string
-    handleSearchKeywordChange: (newSearchKeyword: string) => void;
-}
-
-function SearchForm({handleSearchKeywordChange, searchKeyword} : SearchFormProps) {
+function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResultsChange} : SearchFormProps) {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         handleSearchKeywordChange(event.target.value);
     }
     const handleFetch = async () => {
         const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/a8b59a63ce2040ccb118/C002/json/1/100/PRDLST_NM=${searchKeyword}`);
-        console.log(response);
+        handleSearchResultsChange(response.data.C002.row);
     }
 
     return (
@@ -75,7 +69,6 @@ function SearchForm({handleSearchKeywordChange, searchKeyword} : SearchFormProps
                 onChange={handleChange}
                 placeholder={"원하는 식품을 입력해주세요."}
             />
-
             <SearchButton
                 onClick={handleFetch}
             >

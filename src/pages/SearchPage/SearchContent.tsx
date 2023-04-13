@@ -14,17 +14,27 @@ const Wrapper = styled.div`
 
 function SearchContent() {
     const [searchKeyword, setSearchKeyword] = useState<string>('');
+    const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+
 
     const handleSearchKeywordChange = (newSearchKeyword: string) => {
         setSearchKeyword(newSearchKeyword);
     };
+    const handleSearchResultsChange = (newSearchResults: SearchResult[]) => {
+        setSearchResults(newSearchResults);
+    }
 
     return (
         <Wrapper>
             <SearchForm
                 searchKeyword = {searchKeyword}
-                handleSearchKeywordChange = {handleSearchKeywordChange}/>
-            <SearchList/>
+                handleSearchKeywordChange = {handleSearchKeywordChange}
+                handleSearchResultsChange = {handleSearchResultsChange}
+            />
+
+            <SearchList
+                searchResults = {searchResults}
+            />
         </Wrapper>
     );
 }

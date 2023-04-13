@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import SearchItem from "./SearchItem";
 
@@ -33,20 +33,20 @@ const SearchScrollBox = styled.div`
   }
 `;
 
+function SearchList({searchResults} : SearchListProps) {
 
-function SearchList() {
+    useEffect(() => {
+    },[searchResults]);
+
     return (
         <SearchListWrapper>
             <SearchScrollBox>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
-                <SearchItem/>
+                {searchResults.map((item: SearchResult) =>
+                    <SearchItem
+                        key = {item.PRDLST_REPORT_NO}
+                        name={item.PRDLST_NM}
+                        company={item.BSSH_NM}
+                    />)}
             </SearchScrollBox>
         </SearchListWrapper>
     );
