@@ -11,7 +11,9 @@ type SearchFormProps = {
     searchKeyword: string
     handleSearchKeywordChange: (newSearchKeyword: string) => void;
     handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
+    handleIsLoadingToggle: () => void;
 }
 type SearchListProps = {
+    isLoading: boolean;
     searchResults: SearchResult[]
 }

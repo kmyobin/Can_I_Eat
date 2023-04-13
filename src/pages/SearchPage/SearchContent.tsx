@@ -15,13 +15,16 @@ const Wrapper = styled.div`
 function SearchContent() {
     const [searchKeyword, setSearchKeyword] = useState<string>('');
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSearchKeywordChange = (newSearchKeyword: string) => {
         setSearchKeyword(newSearchKeyword);
     };
     const handleSearchResultsChange = (newSearchResults: SearchResult[]) => {
         setSearchResults(newSearchResults);
+    }
+    const handleIsLoadingToggle = () => {
+        setIsLoading(prevState => !prevState);
     }
 
     return (
@@ -30,9 +33,11 @@ function SearchContent() {
                 searchKeyword = {searchKeyword}
                 handleSearchKeywordChange = {handleSearchKeywordChange}
                 handleSearchResultsChange = {handleSearchResultsChange}
+                handleIsLoadingToggle = {handleIsLoadingToggle}
             />
 
             <SearchList
+                isLoading = {isLoading}
                 searchResults = {searchResults}
             />
         </Wrapper>

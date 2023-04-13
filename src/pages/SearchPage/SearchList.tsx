@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import SearchItem from "./SearchItem";
+import {Skeleton} from "antd";
 
 const SearchListWrapper = styled.div`
   display: flex;
@@ -33,21 +34,26 @@ const SearchScrollBox = styled.div`
   }
 `;
 
-function SearchList({searchResults} : SearchListProps) {
+function SearchList({searchResults, isLoading} : SearchListProps) {
 
     useEffect(() => {
     },[searchResults]);
 
     return (
         <SearchListWrapper>
-            <SearchScrollBox>
-                {searchResults.map((item: SearchResult) =>
-                    <SearchItem
-                        key = {item.PRDLST_REPORT_NO}
-                        name={item.PRDLST_NM}
-                        company={item.BSSH_NM}
-                    />)}
-            </SearchScrollBox>
+            {
+                isLoading ?
+                    <Skeleton active style={{ width: '80%' }} paragraph={{ rows: 18 }} />
+                    :
+                    <SearchScrollBox>
+                        {searchResults.map((item: SearchResult) =>
+                            <SearchItem
+                                key = {item.PRDLST_REPORT_NO}
+                                name={item.PRDLST_NM}
+                                company={item.BSSH_NM}
+                            />)}
+                    </SearchScrollBox>
+            }
         </SearchListWrapper>
     );
 }
