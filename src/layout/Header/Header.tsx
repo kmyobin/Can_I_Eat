@@ -12,7 +12,7 @@ const Style = {
     background: #00b578;
     font-family: NotoSansKR-700;
     font-size: 24px; //1.5rem;
-    padding-left: 20px;
+    //padding-left: 20px;
     color: #ffffff;
     display: flex;
     align-items: center;
