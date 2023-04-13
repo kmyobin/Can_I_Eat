@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import styled from "styled-components";
 import { intro } from "../../assets/intro";
 import MyButton from "../common/MyButton";
+import { useNavigate } from "react-router-dom";
 
 const Style = {
   Wrapper: styled.div`
@@ -22,6 +23,8 @@ const Style = {
   `,
   ButtonArea: styled.div`
     //width: 100%;
+    position: fixed;
+    bottom: 50px;
   `,
 };
 
@@ -30,6 +33,7 @@ interface Intro {
   food: string;
 }
 function Main() {
+  const navigate = useNavigate();
   const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -73,7 +77,7 @@ function Main() {
         <br />
         {Text}
       </Style.TextArea>
-      <Style.ButtonArea>
+      <Style.ButtonArea onClick={() => navigate("/select")}>
         <MyButton text="시작 ✅" />
       </Style.ButtonArea>
     </Style.Wrapper>
