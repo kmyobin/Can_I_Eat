@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import magnifyImg from '../../assets/images/magnify.png';
 
 const SearchFormWrapper = styled.div`
   display: flex;
@@ -29,7 +30,11 @@ const SearchInput = styled.input`
   height: 55px;
   border: none;
   border-radius: 15px;
-  background: #F5F5F5;
+  background-color: #F5F5F5;
+  background-image: url(${magnifyImg});
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  padding-left: 30px;
 `;
 const SearchButton = styled.button`
   box-sizing: border-box;
@@ -51,9 +56,8 @@ function SearchForm() {
             <SearchHeading>
                 이제 식품을 검색해주세요!
             </SearchHeading>
-            <SearchInput>
+            <SearchInput placeholder={"원하는 식품을 입력해주세요."} />
 
-            </SearchInput>
             <SearchButton>
                 검색
             </SearchButton>
