@@ -49,6 +49,7 @@ function SearchList({searchResults, isLoading} : SearchListProps) {
                         {searchResults.map((item: SearchResult) =>
                             <SearchItem
                                 key = {item.PRDLST_REPORT_NO}
+                                id = {item.PRDLST_REPORT_NO}
                                 imgUrl = {item.IMG_URL}
                                 name={item.PRDLST_NM}
                                 company={item.BSSH_NM}

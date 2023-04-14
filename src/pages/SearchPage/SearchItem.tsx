@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
-const SearchItemWrapper = styled.div`
+const SearchItemWrapper = styled(Link)`
   display: flex;
   align-items: center;
   
@@ -12,6 +13,9 @@ const SearchItemWrapper = styled.div`
   border-radius: 10px;
 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  text-decoration: none;
+  color: inherit;
 `;
 
 const SearchItemInfo = styled.div`
@@ -36,9 +40,9 @@ const SearchItemCompany = styled.div`
   color: #999;
 `;
 
-function SearchItem({name, company, imgUrl} : SearchItemProps) {
+function SearchItem({id, name, company, imgUrl} : SearchItemProps) {
     return (
-        <SearchItemWrapper>
+        <SearchItemWrapper to ={`/result/${id}`}>
             <SearchItemImage src={imgUrl}/>
             <SearchItemInfo>
                 <SearchItemName>

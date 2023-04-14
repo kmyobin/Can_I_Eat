@@ -19,6 +19,7 @@ type SearchListProps = {
     searchResults: SearchResult[]
 }
 type SearchItemProps = {
+    id: string
     name : string;
     imgUrl: string;
     company: string;
