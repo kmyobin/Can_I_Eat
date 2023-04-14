@@ -2,6 +2,7 @@ import React, {memo, useState} from "react";
 import styled from "styled-components";
 import magnifyImg from '../../assets/images/magnify.png';
 import axios from "axios";
+import {makeFoodImgURL, makeFoodRawMaterialURL} from "../../utils";
 
 const Wrapper = styled.div`
   display: flex;
@@ -70,9 +71,9 @@ function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchF
     const handleSearchResultsFetch = async () => {
         handleIsLoadingToggle();
         try {
-            const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/${process.env.REACT_APP_RAW_MATERIAL_KEY}/C002/json/1/30/PRDLST_NM=${searchKeyword}`);
+            const response =  await axios.get(makeFoodRawMaterialURL(process.env.REACT_APP_RAW_MATERIAL_KEY, searchKeyword));
             const ids = response.data.C002.row.map((item: SearchResult) => item.PRDLST_REPORT_NO);
-            const images = await axios.all(ids.map((id:string) => axios.get(`https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${process.env.REACT_APP_FOOD_IMAGE_KEY}&prdlstReportNo=${id}&returnType=json`)));
+            const images = await axios.all(ids.map((id:string) => axios.get(makeFoodImgURL(process.env.REACT_APP_FOOD_IMAGE_KEY, id))));
             const imgUrls = images.map((item:any)=> item.data.body.items[0]?.item.imgurl1);
             const results = response.data.C002.row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
             handleSearchResultsChange(results);
