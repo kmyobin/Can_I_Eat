@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 import styled from "styled-components";
 import magnifyImg from '../../assets/images/magnify.png';
 import axios from "axios";
@@ -57,6 +57,10 @@ const SearchButton = styled.button`
   }
 `;
 
+const SearchHeadingWrapper = memo(() => {
+    return <SearchHeading>이제 식품을 검색해주세요!</SearchHeading>
+});
+
 function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
     const [searchKeyword, setSearchKeyword] = useState<string>('');
 
@@ -83,18 +87,15 @@ function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchF
 
     return (
         <Wrapper>
-            <SearchHeading>
-                이제 식품을 검색해주세요!
-            </SearchHeading>
+            <SearchHeadingWrapper/>
             <SearchInput
                 onChange={handleSearchKeywordChange}
                 placeholder={"원하는 식품을 입력해주세요."}
             />
-            <SearchButton disabled={searchKeyword === ""}
+            <SearchButton
                 onClick={handleSearchResultsFetch}
-            >
-                검색
-            </SearchButton>
+                disabled={searchKeyword === ""}
+            />
         </Wrapper>
     );
 }
