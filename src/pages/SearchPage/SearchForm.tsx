@@ -95,7 +95,9 @@ function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchF
             <SearchButton
                 onClick={handleSearchResultsFetch}
                 disabled={searchKeyword === ""}
-            />
+            >
+                검색
+            </SearchButton>
         </Wrapper>
     );
 }
