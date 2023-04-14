@@ -75,7 +75,7 @@ function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchF
             // 원재료 API 에서 가져온 데이터의 수와 상관없이 이미지 API 를 일괄적으로 한번만 호출 한다.(axios.all)
             const ids = row.map(({PRDLST_REPORT_NO}: SearchResult) => PRDLST_REPORT_NO);
             const images = await axios.all(ids.map((id:string) => axios.get(makeFoodImgURL(process.env.REACT_APP_FOOD_IMAGE_KEY, id))));
-            const imgUrls = images.map(({data:{body: items}}:any)=> items[0]?.item.imgurl1);
+            const imgUrls = images.map(({data:{body:{items:[first]}}}:any)=> first?.item.imgurl1);
             const results = row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
             handleSearchResultsChange(results);
         } catch (e) {
