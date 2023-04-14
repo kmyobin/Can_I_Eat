@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import magnifyImg from '../../assets/images/magnify.png';
 import axios from "axios";
@@ -57,11 +57,13 @@ const SearchButton = styled.button`
   }
 `;
 
-function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        handleSearchKeywordChange(event.target.value);
+function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
+    const [searchKeyword, setSearchKeyword] = useState<string>('');
+
+    const handleSearchKeywordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchKeyword(event.target.value);
     }
-    const handleFetch = async () => {
+    const handleSearchResultsFetch = async () => {
         handleIsLoadingToggle();
         try {
             const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/${process.env.REACT_APP_RAW_MATERIAL_KEY}/C002/json/1/30/PRDLST_NM=${searchKeyword}`);
@@ -85,11 +87,11 @@ function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResul
                 이제 식품을 검색해주세요!
             </SearchHeading>
             <SearchInput
-                onChange={handleChange}
+                onChange={handleSearchKeywordChange}
                 placeholder={"원하는 식품을 입력해주세요."}
             />
             <SearchButton disabled={searchKeyword === ""}
-                onClick={handleFetch}
+                onClick={handleSearchResultsFetch}
             >
                 검색
             </SearchButton>

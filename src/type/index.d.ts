@@ -9,8 +9,6 @@ type SearchResult = {
     IMG_URL: string;
 };
 type SearchFormProps = {
-    searchKeyword: string;
-    handleSearchKeywordChange: (newSearchKeyword: string) => void;
     handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
     handleIsLoadingToggle: () => void;
 };
