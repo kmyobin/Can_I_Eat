@@ -6,10 +6,13 @@ import {Skeleton} from "antd";
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  
   width: 60%;
   height: 600px;
 `;
-const SearchScrollBox = styled.div`
+const SearchScrollBox = styled.div<SearchScrollBoxProps>`
+  display: ${({ isResultExists }) => (isResultExists ? 'block' : 'none')};;
+  
   width: 80%;
   height: 100%;
   padding-right: 20px;
@@ -44,7 +47,7 @@ function SearchList({searchResults, isLoading} : SearchListProps) {
                 isLoading ?
                     <Skeleton active style={{ width: '80%' }} paragraph={{ rows: 18 }} />
                     :
-                    <SearchScrollBox>
+                    <SearchScrollBox isResultExists = {searchResults.length !== 0}>
                         {searchResults.map((item: SearchResult) =>
                             <SearchItem
                                 key = {item.PRDLST_REPORT_NO}
