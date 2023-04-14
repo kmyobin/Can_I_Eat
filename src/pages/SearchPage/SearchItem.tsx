@@ -17,11 +17,11 @@ const SearchItemWrapper = styled.div`
 const SearchItemInfo = styled.div`
   height: 40px;
 `
-const SearchItemImage = styled.div`
+const SearchItemImage = styled.img`
   width: 40px;
   height: 40px;
   margin: 0 20px;
-  background: tomato;
+  background-image: url(${props => props.src});
   border-radius: 50%;
 `;
 const SearchItemName = styled.div`
@@ -36,15 +36,10 @@ const SearchItemCompany = styled.div`
   color: #999;
 `;
 
-type SearchItemProps = {
-    name : string;
-    company: string;
-}
-
-function SearchItem({name, company} : SearchItemProps) {
+function SearchItem({name, company, imgUrl} : SearchItemProps) {
     return (
         <SearchItemWrapper>
-            <SearchItemImage/>
+            <SearchItemImage src={imgUrl}/>
             <SearchItemInfo>
                 <SearchItemName>
                     {name}

@@ -35,7 +35,6 @@ function SearchContent() {
                 handleSearchResultsChange = {handleSearchResultsChange}
                 handleIsLoadingToggle = {handleIsLoadingToggle}
             />
-
             <SearchList
                 isLoading = {isLoading}
                 searchResults = {searchResults}
