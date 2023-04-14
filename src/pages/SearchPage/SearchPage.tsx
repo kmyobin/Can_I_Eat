@@ -4,9 +4,7 @@ import SearchContent from "./SearchContent";
 
 function SearchPage() {
     return (
-        <>
             <PageTemplate content={<SearchContent/>}/>
-        </>
     );
 }
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SearchItem from "./SearchItem";
 import {Skeleton} from "antd";
 
-const SearchListWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 60%;
@@ -13,8 +13,8 @@ const SearchScrollBox = styled.div`
   width: 80%;
   height: 100%;
   padding-right: 20px;
+  
   overflow-y: scroll;
-
   /* 스크롤바 너비 조정 */
   ::-webkit-scrollbar {
     width: 6.5px;
@@ -35,12 +35,11 @@ const SearchScrollBox = styled.div`
 `;
 
 function SearchList({searchResults, isLoading} : SearchListProps) {
-
     useEffect(() => {
     },[searchResults]);
 
     return (
-        <SearchListWrapper>
+        <Wrapper>
             {
                 isLoading ?
                     <Skeleton active style={{ width: '80%' }} paragraph={{ rows: 18 }} />
@@ -56,7 +55,7 @@ function SearchList({searchResults, isLoading} : SearchListProps) {
                             />)}
                     </SearchScrollBox>
             }
-        </SearchListWrapper>
+        </Wrapper>
     );
 }
 

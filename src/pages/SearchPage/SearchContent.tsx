@@ -4,12 +4,12 @@ import SearchForm from "./SearchForm";
 import SearchList from "./SearchList";
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  
   display: flex;
   align-items: center;
   justify-content: space-around;
+  
+  width: 100%;
+  height: 100%;
 `;
 
 function SearchContent() {
@@ -22,10 +22,10 @@ function SearchContent() {
     };
     const handleSearchResultsChange = (newSearchResults: SearchResult[]) => {
         setSearchResults(newSearchResults);
-    }
+    };
     const handleIsLoadingToggle = () => {
         setIsLoading(prevState => !prevState);
-    }
+    };
 
     return (
         <Wrapper>

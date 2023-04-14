@@ -3,7 +3,7 @@ import styled from "styled-components";
 import magnifyImg from '../../assets/images/magnify.png';
 import axios from "axios";
 
-const SearchFormWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,7 +12,6 @@ const SearchFormWrapper = styled.div`
   width: 40%;
   height: 600px;
 `;
-
 const SearchHeading = styled.h1`
   box-sizing: border-box;
   width: 100%;
@@ -67,7 +66,7 @@ function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResul
         try {
             const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/${process.env.REACT_APP_RAW_MATERIAL_KEY}/C002/json/1/30/PRDLST_NM=${searchKeyword}`);
             const ids = response.data.C002.row.map((item: SearchResult) => item.PRDLST_REPORT_NO);
-            const images = await axios.all(ids.map((id:string) => axios.get(`https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${process.env.REACT_APP_FOOD_IMAGE_KEY}&prdlstReportNo=${id}&returnType=json`)))
+            const images = await axios.all(ids.map((id:string) => axios.get(`https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${process.env.REACT_APP_FOOD_IMAGE_KEY}&prdlstReportNo=${id}&returnType=json`)));
             const imgUrls = images.map((item:any)=> item.data.body.items[0]?.item.imgurl1);
             const results = response.data.C002.row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
             handleSearchResultsChange(results);
@@ -79,8 +78,9 @@ function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResul
         }
         handleIsLoadingToggle();
     }
+
     return (
-        <SearchFormWrapper>
+        <Wrapper>
             <SearchHeading>
                 이제 식품을 검색해주세요!
             </SearchHeading>
@@ -93,7 +93,7 @@ function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResul
             >
                 검색
             </SearchButton>
-        </SearchFormWrapper>
+        </Wrapper>
     );
 }
 
