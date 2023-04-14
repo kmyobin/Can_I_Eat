@@ -49,6 +49,13 @@ const SearchButton = styled.button`
   font-family: NotoSansKR-700;
   font-weight: 500;
   color: #fff;
+  
+  cursor: pointer;
+  
+  &:disabled {
+    opacity: 30%;
+    cursor: initial;
+  }
 `;
 
 function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
@@ -76,7 +83,7 @@ function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResul
                 onChange={handleChange}
                 placeholder={"원하는 식품을 입력해주세요."}
             />
-            <SearchButton
+            <SearchButton disabled={searchKeyword === ""}
                 onClick={handleFetch}
             >
                 검색
