@@ -71,11 +71,11 @@ function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchF
     const handleSearchResultsFetch = async () => {
         handleIsLoadingToggle();
         try {
-            const response =  await axios.get(makeFoodRawMaterialURL(process.env.REACT_APP_RAW_MATERIAL_KEY, searchKeyword));
-            const ids = response.data.C002.row.map((item: SearchResult) => item.PRDLST_REPORT_NO);
+            const {data:{C002:{row}}} =  await axios.get(makeFoodRawMaterialURL(process.env.REACT_APP_RAW_MATERIAL_KEY, searchKeyword));
+            const ids = row.map(({PRDLST_REPORT_NO}: SearchResult) => PRDLST_REPORT_NO);
             const images = await axios.all(ids.map((id:string) => axios.get(makeFoodImgURL(process.env.REACT_APP_FOOD_IMAGE_KEY, id))));
-            const imgUrls = images.map((item:any)=> item.data.body.items[0]?.item.imgurl1);
-            const results = response.data.C002.row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
+            const imgUrls = images.map(({data:{body: items}}:any)=> items[0]?.item.imgurl1);
+            const results = row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
             handleSearchResultsChange(results);
         } catch (e) {
             if (e instanceof TypeError) {
