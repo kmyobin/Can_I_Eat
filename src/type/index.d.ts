@@ -6,6 +6,7 @@ type SearchResult = {
     PRDLST_REPORT_NO : string;
     PRMS_DT : string;
     RAWMTRL_NM: string;
+    IMG_URL: string;
 }
 type SearchFormProps = {
     searchKeyword: string
@@ -16,4 +17,9 @@ type SearchFormProps = {
 type SearchListProps = {
     isLoading: boolean;
     searchResults: SearchResult[]
+}
+type SearchItemProps = {
+    name : string;
+    imgUrl: string;
+    company: string;
 }
