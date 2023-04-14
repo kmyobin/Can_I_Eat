@@ -50,14 +50,15 @@ const SearchButton = styled.button`
   font-weight: 500;
   color: #fff;
 `;
-function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
 
+function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         handleSearchKeywordChange(event.target.value);
     }
     const handleFetch = async () => {
         handleIsLoadingToggle();
-        const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/a8b59a63ce2040ccb118/C002/json/1/100/PRDLST_NM=${searchKeyword}`);
+        const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/${process.env.REACT_APP_RAW_MATERIAL_KEY}/C002/json/1/100/PRDLST_NM=${searchKeyword}`);
+        const response2 = await axios.get(`https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${process.env.REACT_APP_FOOD_IMAGE_KEY}&prdlstNm=${searchKeyword}&returnType=json&pageNo=1&numOfRows=10`);
         handleSearchResultsChange(response.data.C002.row);
         handleIsLoadingToggle();
     }
