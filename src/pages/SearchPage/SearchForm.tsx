@@ -64,16 +64,21 @@ function SearchForm({handleSearchKeywordChange, searchKeyword, handleSearchResul
     }
     const handleFetch = async () => {
         handleIsLoadingToggle();
-        const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/${process.env.REACT_APP_RAW_MATERIAL_KEY}/C002/json/1/30/PRDLST_NM=${searchKeyword}`);
-        const ids = response.data.C002.row.map((item: SearchResult) => item.PRDLST_REPORT_NO);
-        // 각 품목번호에 맞는 쿼리를 일괄 배치 요청합니다.
-        const images = await axios.all(ids.map((id:string) => axios.get(`https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${process.env.REACT_APP_FOOD_IMAGE_KEY}&prdlstReportNo=${id}&returnType=json`)))
-        const imgUrls = images.map((item:any)=> item.data.body.items[0]?.item.imgurl1);
-        const results = response.data.C002.row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
-        handleSearchResultsChange(results);
+        try {
+            const response =  await axios.get(`http://openapi.foodsafetykorea.go.kr/api/${process.env.REACT_APP_RAW_MATERIAL_KEY}/C002/json/1/30/PRDLST_NM=${searchKeyword}`);
+            const ids = response.data.C002.row.map((item: SearchResult) => item.PRDLST_REPORT_NO);
+            const images = await axios.all(ids.map((id:string) => axios.get(`https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${process.env.REACT_APP_FOOD_IMAGE_KEY}&prdlstReportNo=${id}&returnType=json`)))
+            const imgUrls = images.map((item:any)=> item.data.body.items[0]?.item.imgurl1);
+            const results = response.data.C002.row.map((item:SearchResult, index:number) => ({...item, IMG_URL: imgUrls[index]}));
+            handleSearchResultsChange(results);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                handleSearchResultsChange([]);
+                console.log('TypeError가 발생했습니다:', e.message);
+            }
+        }
         handleIsLoadingToggle();
     }
-
     return (
         <SearchFormWrapper>
             <SearchHeading>
