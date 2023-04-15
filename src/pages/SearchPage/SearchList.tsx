@@ -9,6 +9,11 @@ const Wrapper = styled.div`
   
   width: 60%;
   height: 600px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 300px;
+  };
 `;
 const SearchScrollBox = styled.div<SearchScrollBoxProps>`
   display: ${({ isResultExists }) => (isResultExists ? 'block' : 'none')};;

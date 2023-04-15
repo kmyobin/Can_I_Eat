@@ -15,6 +15,11 @@ const Wrapper = styled(Link)`
   
   text-decoration: none;
   color: inherit;
+
+  @media only screen and (max-width: 768px) {
+    width: 288px;
+    height: 56px;
+  };
 `;
 const SearchItemInfo = styled.div`
   height: 40px;
@@ -31,6 +36,10 @@ const SearchItemName = styled.div`
   
   font-size: 17px;
   font-weight: 400;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  };
 `;
 const SearchItemCompany = styled.div`
   height: 20px;
@@ -38,6 +47,10 @@ const SearchItemCompany = styled.div`
   font-size: 13px;
   font-weight: 400;
   color: #999;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 10px;
+  };
 `;
 
 function SearchItem({id, name, company, imgUrl} : SearchItemProps) {
