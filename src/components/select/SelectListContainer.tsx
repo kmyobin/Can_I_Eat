@@ -23,6 +23,7 @@ const SelectListWrapper = styled.div`
 `;
 
 function SelectListContainer({ selectList }: SelectList) {
+  const onClickGridCard = () => {};
   return (
     <SelectListWrapper>
       <Row gutter={[16, 16]}>
@@ -34,6 +35,7 @@ function SelectListContainer({ selectList }: SelectList) {
               src={selectItem.src}
               name={selectItem.name}
               alt={selectItem.alt}
+              onClick={onClickGridCard}
             />
           ))}
       </Row>

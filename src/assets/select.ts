@@ -28,7 +28,7 @@ const 영유아 = `${IMAGES_PATH}/영유아.png`;
 const 힌두교 = `${IMAGES_PATH}/힌두교.png`;
 
 export const selectList = [
-  {
+  /*{
     id: 1,
     name: "힌두교",
     src: 힌두교,
@@ -51,7 +51,7 @@ export const selectList = [
     name: "비건",
     src: 비건,
     alt: "비건",
-  },
+  },*/
   {
     id: 5,
     name: "조개류",
