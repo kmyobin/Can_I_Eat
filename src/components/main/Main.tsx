@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import styled from "styled-components";
-import { intro } from "../../assets/intro";
-import MyButton from "../common/MyButton";
+import { intro } from "assets/intro";
+import MyButton from "components/common/MyButton";
 import { useNavigate } from "react-router-dom";
 
 const Style = {
@@ -55,7 +55,6 @@ function Main() {
     }, 70);
 
     if (Count === text.length) {
-      //setCount(0); // Count를 0으로 설정하여 초기화
       clearInterval(interval);
     }
     return () => clearInterval(interval);
