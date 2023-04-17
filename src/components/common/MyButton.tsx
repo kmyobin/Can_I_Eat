@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "antd";
 import styled from "styled-components";
 
-interface text {
+type TextType = {
   text: string;
-}
+};
 
 const StyledButton = styled(Button)`
   &:where(.css-dev-only-do-not-override-1xusghl).ant-btn-default:not(
@@ -20,7 +20,7 @@ const StyledButton = styled(Button)`
   border-radius: 20px;
 `;
 
-function MyButton({ text }: text) {
+function MyButton({ text }: TextType) {
   return <StyledButton>{text}</StyledButton>;
 }
 

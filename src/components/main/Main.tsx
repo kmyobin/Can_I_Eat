@@ -28,22 +28,18 @@ const Style = {
   `,
 };
 
-interface Intro {
-  name: string;
-  food: string;
-}
 function Main() {
   const navigate = useNavigate();
-  const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
+  //const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % currentIntro.length);
+      setCurrentIndex((currentIndex + 1) % intro.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, currentIntro]);
+  }, [currentIndex]);
 
   const text = "먹어도 될까 . . . ?";
   const [movingText, setMovingText] = useState("");
@@ -68,11 +64,9 @@ function Main() {
   return (
     <Style.Wrapper>
       <Style.TextArea>
-        나는 {currentIntro[currentIndex].name}인데
+        나는 {intro[currentIndex].name}인데
         <br />
-        <span style={{ color: "#999999" }}>
-          {currentIntro[currentIndex].food}
-        </span>
+        <span style={{ color: "#999999" }}>{intro[currentIndex].food}</span>
         <br />
         {movingText}
       </Style.TextArea>
