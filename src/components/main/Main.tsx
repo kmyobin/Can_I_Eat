@@ -46,23 +46,23 @@ function Main() {
   }, [currentIndex, currentIntro]);
 
   const text = "먹어도 될까 . . . ?";
-  const [Text, setText] = useState("");
-  const [Count, setCount] = useState(0);
+  const [movingText, setMovingText] = useState("");
+  const [count, setCount] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setText(text.substring(0, Count + 1)); // 이전 문자 + 다음 문자
-      setCount(Count + 1); // 개수만큼 count
+      setMovingText(text.substring(0, count + 1)); // 이전 문자 + 다음 문자
+      setCount(count + 1); // 개수만큼 count
     }, 70);
 
-    if (Count === text.length) {
+    if (count === text.length) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [text, Count]);
+  }, [count]);
 
   useEffect(() => {
     setCount(0);
-    setText("");
+    setMovingText("");
   }, [currentIndex]);
 
   return (
@@ -74,7 +74,7 @@ function Main() {
           {currentIntro[currentIndex].food}
         </span>
         <br />
-        {Text}
+        {movingText}
       </Style.TextArea>
       <Style.ButtonArea onClick={() => navigate("/select")}>
         <MyButton text="시작 ✅" />
