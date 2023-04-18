@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import styled from "styled-components";
 import SearchItem from "./SearchItem";
 import {Skeleton} from "antd";
+import {SearchListProps, SearchResult, SearchScrollBoxProps} from "../../type";
 
 const Wrapper = styled.div`
   display: flex;

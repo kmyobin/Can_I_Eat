@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import SearchForm from "./SearchForm";
 import SearchList from "./SearchList";
+import {SearchResult} from "../../type";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,10 +21,10 @@ function SearchContent() {
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleSearchResultsChange = (newSearchResults: SearchResult[]) => {
+    function handleSearchResultsChange(newSearchResults: SearchResult[]) {
         setSearchResults(newSearchResults);
     };
-    const handleIsLoadingToggle = () => {
+    function handleIsLoadingToggle() {
         setIsLoading(prevState => !prevState);
     };
 
