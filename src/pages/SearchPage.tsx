@@ -1,10 +1,15 @@
 import React from "react";
 import PageTemplate from "../layout/PageTemplate";
 import SearchContent from "../components/search/SearchContent";
+import {SearchPageProps} from "../type";
 
-function SearchPage() {
+function SearchPage({searchResults,handleSearchResultsChange}:SearchPageProps) {
     return (
-            <PageTemplate content={<SearchContent/>}/>
+            <PageTemplate content={
+                <SearchContent
+                    searchResults={searchResults}
+                    handleSearchResultsChange={handleSearchResultsChange}
+                />}/>
     );
 }
 

@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import ResultCard from "./ResultCard";
 import ResultKeywordBox from "./ResultKeywordBox";
+import {useParams} from "react-router-dom";
+import {ResultContentProps} from "../../type";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,8 +18,8 @@ const Wrapper = styled.div`
   }
 `;
 
-function ResultContent() {
-
+function ResultContent({searchResults,handleSearchResultsChange}:ResultContentProps) {
+    const { foodId } = useParams();
 
     return (
         <Wrapper>
