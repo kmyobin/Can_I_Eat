@@ -58,23 +58,23 @@ export interface FoodImageResponse {
 }
 
 export interface FoodImageData {
-        item: {
-            nutrient: string;
-            rawmtrl: string;
-            prdlstNm: string;
-            imgurl2: string;
-            barcode: string;
-            imgurl1: string;
-            productGb: string;
-            seller: string;
-            prdkindstate: string;
-            rnum: string;
-            manufacture: string;
-            prdkind: string;
-            capacity: string;
-            prdlstReportNo: string;
-            allergy: string;
-        }
+    item: {
+        nutrient: string;
+        rawmtrl: string;
+        prdlstNm: string;
+        imgurl2: string;
+        barcode: string;
+        imgurl1: string;
+        productGb: string;
+        seller: string;
+        prdkindstate: string;
+        rnum: string;
+        manufacture: string;
+        prdkind: string;
+        capacity: string;
+        prdlstReportNo: string;
+        allergy: string;
+    }
 }
 export type SearchResult = {
     BSSH_NM : string;
@@ -85,21 +85,4 @@ export type SearchResult = {
     PRMS_DT : string;
     RAWMTRL_NM: string;
     IMG_URL: string;
-};
-export type SearchFormProps = {
-    handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
-    handleIsLoadingToggle: () => void;
-};
-export type SearchListProps = {
-    isLoading: boolean;
-    searchResults: SearchResult[]
-};
-export type SearchItemProps = {
-    id: string;
-    name : string;
-    imgUrl: string;
-    company: string;
-};
-export type SearchScrollBoxProps = {
-    isResultExists: boolean;
 };

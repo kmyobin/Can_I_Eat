@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ResultCard from "./ResultCard";
 import ResultKeywordBox from "./ResultKeywordBox";
 import {useParams} from "react-router-dom";
-import {ResultContentProps} from "../../type";
+import {ResultContentProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;

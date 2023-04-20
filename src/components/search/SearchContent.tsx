@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import SearchForm from "./SearchForm";
 import SearchList from "./SearchList";
-import {SearchContentProps, SearchResult} from "../../type";
+import {SearchContentProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;

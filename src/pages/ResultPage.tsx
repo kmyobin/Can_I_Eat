@@ -1,7 +1,7 @@
 import React from "react";
 import PageTemplate from "../layout/PageTemplate";
 import ResultContent from "../components/result/ResultContet";
-import {ResultPageProps} from "../type";
+import {ResultPageProps} from "../type/props";
 
 function ResultPage({searchResults, handleSearchResultsChange}:ResultPageProps) {
     return (
