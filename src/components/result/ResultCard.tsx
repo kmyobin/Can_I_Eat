@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {ResultCardJudgeProps, ResultCardProps} from "../../type/props";
+import ThumbUpImg from "../../assets/images/thumb-up.jpg"
+import ThumbDownImg from "../../assets/images/thumb-down.jpg"
 
 const Wrapper = styled.div`
   display: flex;
@@ -29,7 +31,8 @@ function ResultCard({selectedFood, rawMaterials}:ResultCardProps) {
 
     return (
         <Wrapper>
-            <ResultCardImage src ={selectedFood.IMG_URL}/>
+            <ResultCardImage src ={
+                selectedFood.IMG_URL || (isPossible ? ThumbUpImg : ThumbDownImg)}/>
             <ResultCardFoodName>
                 {selectedFood.PRDLST_NM}
             </ResultCardFoodName>
