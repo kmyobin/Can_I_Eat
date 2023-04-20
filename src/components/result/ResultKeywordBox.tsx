@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ResultChipList from "./ResultChipList";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,29 +10,26 @@ const Wrapper = styled.div`
   height: 400px;
 `;
 const ResultKeywordMessage = styled.div`
+  display: flex;
+  align-items: center;
+  
   width: 268px;
   height: 50px;
   margin-bottom: 40px;
   
-  background: blue;
+  font-size: 36px;
+  font-weight: 400;
 `;
-const ResultKeywordChipBox = styled.div`
-  width: 491px;
-  height: 230px;
-  
-  background: aquamarine;
-`;
+
 
 function ResultKeywordBox() {
 
     return (
         <Wrapper>
             <ResultKeywordMessage>
-
+                0건의 키워드 일치
             </ResultKeywordMessage>
-            <ResultKeywordChipBox>
-
-            </ResultKeywordChipBox>
+            <ResultChipList/>
         </Wrapper>
     )
 }

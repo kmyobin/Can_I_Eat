@@ -10,12 +10,17 @@ const Wrapper = styled.div`
 const ResultCardImage = styled.div`
   width: 400px;
   height: 200px;
-  background: tomato;
+  border: 1px solid black;
 `;
-const ResultCardMessage = styled.div`
-  width: 421px;
-  height: 143px;
-  background: yellow;
+const ResultCardFoodName = styled.p`
+  margin: 20px 0 0;
+  font-size: 36px;
+`;
+const ResultCardJudge = styled.p`
+  margin: 0;
+  
+  color: #00B578;
+  font-size: 36px;
 `;
 
 function ResultCard() {
@@ -23,7 +28,12 @@ function ResultCard() {
     return (
         <Wrapper>
             <ResultCardImage/>
-            <ResultCardMessage/>
+            <ResultCardFoodName>
+                3.5 고추장 제육볶음
+            </ResultCardFoodName>
+            <ResultCardJudge>
+                드셔도 됩니다!
+            </ResultCardJudge>
         </Wrapper>
     )
 }
