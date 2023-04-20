@@ -4,6 +4,7 @@ import ResultCard from "./ResultCard";
 import ResultKeywordBox from "./ResultKeywordBox";
 import {useParams} from "react-router-dom";
 import {ResultContentProps} from "../../type/props";
+import {SearchResult} from "../../type/data";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,10 +21,12 @@ const Wrapper = styled.div`
 
 function ResultContent({searchResults,handleSearchResultsChange}:ResultContentProps) {
     const { foodId } = useParams();
+    const [selectedFood, setSelectedFood] = useState<SearchResult>(searchResults.filter(item => item.PRDLST_REPORT_NO === foodId)[0])
+
 
     return (
         <Wrapper>
-            <ResultCard/>
+            <ResultCard selectedFood={selectedFood}  />
             <ResultKeywordBox/>
         </Wrapper>
     );

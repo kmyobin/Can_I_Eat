@@ -33,3 +33,6 @@ export type ResultContentProps = {
     searchResults : SearchResult[];
     handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
 }
+export type ResultCardProps = {
+    selectedFood : SearchResult;
+}

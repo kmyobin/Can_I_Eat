@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {ResultCardProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;
@@ -7,10 +8,10 @@ const Wrapper = styled.div`
   width: 50%;
   height: 400px;
 `;
-const ResultCardImage = styled.div`
+const ResultCardImage = styled.img`
   width: 400px;
   height: 200px;
-  border: 1px solid black;
+  background-image: url(${props => props.src});
 `;
 const ResultCardFoodName = styled.p`
   margin: 20px 0 0;
@@ -23,13 +24,13 @@ const ResultCardJudge = styled.p`
   font-size: 36px;
 `;
 
-function ResultCard() {
+function ResultCard({selectedFood}:ResultCardProps) {
 
     return (
         <Wrapper>
-            <ResultCardImage/>
+            <ResultCardImage src ={selectedFood.IMG_URL}/>
             <ResultCardFoodName>
-                3.5 고추장 제육볶음
+                {selectedFood.PRDLST_NM}
             </ResultCardFoodName>
             <ResultCardJudge>
                 드셔도 됩니다!
