@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ResultCardProps} from "../../type/props";
+import {ResultCardJudgeProps, ResultCardProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,14 +17,15 @@ const ResultCardFoodName = styled.p`
   margin: 20px 0 0;
   font-size: 36px;
 `;
-const ResultCardJudge = styled.p`
+const ResultCardJudge = styled.p<ResultCardJudgeProps>`
   margin: 0;
   
-  color: #00B578;
+  color: ${props => props.isPossible ? '#00B578' : '#FF3141'};
   font-size: 36px;
 `;
 
-function ResultCard({selectedFood}:ResultCardProps) {
+function ResultCard({selectedFood, rawMaterials}:ResultCardProps) {
+    const isPossible = !rawMaterials.filter(item => item.isMatched).length
 
     return (
         <Wrapper>
@@ -32,8 +33,8 @@ function ResultCard({selectedFood}:ResultCardProps) {
             <ResultCardFoodName>
                 {selectedFood.PRDLST_NM}
             </ResultCardFoodName>
-            <ResultCardJudge>
-                드셔도 됩니다!
+            <ResultCardJudge isPossible = {isPossible}>
+                {isPossible ? '드셔도 됩니다' : '드시면 안됩니다!'}
             </ResultCardJudge>
         </Wrapper>
     )

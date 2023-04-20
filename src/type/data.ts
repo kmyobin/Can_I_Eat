@@ -86,3 +86,8 @@ export type SearchResult = {
     RAWMTRL_NM: string;
     IMG_URL: string;
 };
+
+export type rawMaterial = {
+    rawMaterialName : string;
+    isMatched: boolean;
+}

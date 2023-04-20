@@ -4,7 +4,7 @@ import ResultCard from "./ResultCard";
 import ResultKeywordBox from "./ResultKeywordBox";
 import {useParams} from "react-router-dom";
 import {ResultContentProps} from "../../type/props";
-import {SearchResult} from "../../type/data";
+import {rawMaterial, SearchResult} from "../../type/data";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,13 +20,19 @@ const Wrapper = styled.div`
 `;
 
 function ResultContent({searchResults,handleSearchResultsChange}:ResultContentProps) {
+    const keywords = ['감자'];
     const { foodId } = useParams();
     const [selectedFood, setSelectedFood] = useState<SearchResult>(searchResults.filter(item => item.PRDLST_REPORT_NO === foodId)[0])
+    const list = selectedFood.RAWMTRL_NM.split(",").map(item => ({
+        rawMaterialName: item,
+        isMatched: new RegExp(`${keywords.join("|")}`, 'gi').test(item)
+    }));
+    const [rawMaterials, setRawMaterials] = useState<rawMaterial[]>(list);
 
 
     return (
         <Wrapper>
-            <ResultCard selectedFood={selectedFood}  />
+            <ResultCard selectedFood={selectedFood} rawMaterials = {rawMaterials}  />
             <ResultKeywordBox/>
         </Wrapper>
     );

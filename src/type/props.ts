@@ -1,4 +1,4 @@
-import {SearchResult} from "./data";
+import {rawMaterial, SearchResult} from "./data";
 
 export type SearchFormProps = {
     handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
@@ -35,4 +35,8 @@ export type ResultContentProps = {
 }
 export type ResultCardProps = {
     selectedFood : SearchResult;
+    rawMaterials : rawMaterial[];
+}
+export type ResultCardJudgeProps = {
+    isPossible : boolean;
 }
