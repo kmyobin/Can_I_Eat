@@ -25,7 +25,7 @@ const ResultCardJudge = styled.p<ResultCardJudgeProps>`
 `;
 
 function ResultCard({selectedFood, rawMaterials}:ResultCardProps) {
-    const isPossible = !rawMaterials.filter(item => item.isMatched).length
+    const isPossible = !rawMaterials.filter(({isMatched}) => isMatched).length
 
     return (
         <Wrapper>

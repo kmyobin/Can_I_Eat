@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {ResultChipItemProps, ResultChipListProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const Wrapper = styled.div`
   
 `;
 
-const ResultChipItem = styled.div`
+const ResultChipItem = styled.div<ResultChipItemProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +41,7 @@ const ResultChipItem = styled.div`
     height: 40px;
     margin-right: 20px;
     margin-bottom: 20px;
-    background: #00B578;
+    background: ${props => props.isMatched ? '#FF3141' : '#00B578'};
     border-radius: 20px;
   
     color: #FFF;
@@ -49,11 +50,15 @@ const ResultChipItem = styled.div`
     
 `;
 
-function ResultChipList() {
+function ResultChipList({rawMaterials}:ResultChipListProps) {
 
     return (
         <Wrapper>
-            <ResultChipItem>떡류</ResultChipItem>
+            {
+                rawMaterials.map(({rawMaterialName, isMatched}) => (
+                    <ResultChipItem isMatched={isMatched}>{rawMaterialName}</ResultChipItem>
+                ))
+            }
         </Wrapper>
     )
 }

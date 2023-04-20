@@ -40,3 +40,12 @@ export type ResultCardProps = {
 export type ResultCardJudgeProps = {
     isPossible : boolean;
 }
+export type ResultKeywordBoxProps = {
+    rawMaterials : rawMaterial[];
+}
+export type ResultChipListProps = {
+    rawMaterials : rawMaterial[];
+}
+export type ResultChipItemProps = {
+    isMatched : boolean;
+}

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ResultChipList from "./ResultChipList";
+import {ResultKeywordBoxProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,14 +23,14 @@ const ResultKeywordMessage = styled.div`
 `;
 
 
-function ResultKeywordBox() {
-
+function ResultKeywordBox({rawMaterials}:ResultKeywordBoxProps) {
+    const lengthOfMatches = rawMaterials.filter(({isMatched}) => isMatched).length
     return (
         <Wrapper>
             <ResultKeywordMessage>
-                0건의 키워드 일치
+                {`${lengthOfMatches}건의 키워드 일치`}
             </ResultKeywordMessage>
-            <ResultChipList/>
+            <ResultChipList rawMaterials = {rawMaterials}/>
         </Wrapper>
     )
 }

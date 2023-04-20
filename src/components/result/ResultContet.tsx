@@ -20,20 +20,20 @@ const Wrapper = styled.div`
 `;
 
 function ResultContent({searchResults,handleSearchResultsChange}:ResultContentProps) {
-    const keywords = ['감자'];
+    const keywords = ['감자','돼지', '밀', '어육', '복숭아', '땅콩'];
     const { foodId } = useParams();
-    const [selectedFood, setSelectedFood] = useState<SearchResult>(searchResults.filter(item => item.PRDLST_REPORT_NO === foodId)[0])
+    const [selectedFood] = useState<SearchResult>(searchResults.filter(({PRDLST_REPORT_NO}) => PRDLST_REPORT_NO === foodId)[0])
     const list = selectedFood.RAWMTRL_NM.split(",").map(item => ({
         rawMaterialName: item,
         isMatched: new RegExp(`${keywords.join("|")}`, 'gi').test(item)
     }));
-    const [rawMaterials, setRawMaterials] = useState<rawMaterial[]>(list);
+    const [rawMaterials] = useState<rawMaterial[]>(list);
 
 
     return (
         <Wrapper>
             <ResultCard selectedFood={selectedFood} rawMaterials = {rawMaterials}  />
-            <ResultKeywordBox/>
+            <ResultKeywordBox rawMaterials = {rawMaterials}/>
         </Wrapper>
     );
 }
