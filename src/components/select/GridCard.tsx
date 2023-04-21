@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { SelectItem } from "./Select";
 import { GridCardsProps } from "./GridCards";
 import { ImageWrapperProps } from "./GridCards";
 import { Col } from "antd";

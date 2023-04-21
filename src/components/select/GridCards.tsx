@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col } from "antd";
 import styled from "styled-components";
-import { SelectListProps } from "./Select";
 import { SelectItem } from "./Select";
 import GridCard from "./GridCard";
 export type GridCardsProps = {
