@@ -1,0 +1,2 @@
+export const makeFoodRawMaterialURL = (key:string | undefined, text:string):string => `http://openapi.foodsafetykorea.go.kr/api/${key}/C002/json/1/30/PRDLST_NM=${text}`;
+export const makeFoodImgURL = (key:string | undefined, text:string):string => `https://apis.data.go.kr/B553748/CertImgListService/getCertImgListService?serviceKey=${key}&prdlstReportNo=${text}&returnType=json`;

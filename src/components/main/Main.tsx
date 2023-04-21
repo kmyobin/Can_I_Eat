@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import styled from "styled-components";
-import { intro } from "../../assets/intro";
-import MyButton from "../common/MyButton";
+import { intro } from "assets/intro";
+import MyButton from "components/common/MyButton";
 import { useNavigate } from "react-router-dom";
 
 const Style = {
@@ -28,54 +28,47 @@ const Style = {
   `,
 };
 
-interface Intro {
-  name: string;
-  food: string;
-}
 function Main() {
   const navigate = useNavigate();
-  const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
+  //const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % currentIntro.length);
+      setCurrentIndex((currentIndex + 1) % intro.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, currentIntro]);
+  }, [currentIndex]);
 
   const text = "먹어도 될까 . . . ?";
-  const [Text, setText] = useState("");
-  const [Count, setCount] = useState(0);
+  const [movingText, setMovingText] = useState("");
+  const [count, setCount] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setText(text.substring(0, Count + 1)); // 이전 문자 + 다음 문자
-      setCount(Count + 1); // 개수만큼 count
+      setMovingText(text.substring(0, count + 1)); // 이전 문자 + 다음 문자
+      setCount(count + 1); // 개수만큼 count
     }, 70);
 
-    if (Count === text.length) {
-      //setCount(0); // Count를 0으로 설정하여 초기화
+    if (count === text.length) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [text, Count]);
+  }, [count]);
 
   useEffect(() => {
     setCount(0);
-    setText("");
+    setMovingText("");
   }, [currentIndex]);
 
   return (
     <Style.Wrapper>
       <Style.TextArea>
-        나는 {currentIntro[currentIndex].name}인데
+        나는 {intro[currentIndex].name}인데
         <br />
-        <span style={{ color: "#999999" }}>
-          {currentIntro[currentIndex].food}
-        </span>
+        <span style={{ color: "#999999" }}>{intro[currentIndex].food}</span>
         <br />
-        {Text}
+        {movingText}
       </Style.TextArea>
       <Style.ButtonArea onClick={() => navigate("/select")}>
         <MyButton text="시작 ✅" />

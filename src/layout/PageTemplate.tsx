@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   height: calc(100vh - 80px);
-  width: 1040px; // 1280px로 하면 제 노트북 기준으로 화면이 넘쳐서 1040px으로 조절했습니다
+  max-width: 1280px; // width -> max-width
   //background-color: #000000; // content 위치 확인용
   margin: 0 auto; // content 가운데 정렬
   @media only screen and (max-width: 768px) {
