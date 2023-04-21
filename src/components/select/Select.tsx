@@ -17,6 +17,18 @@ const Wrapper = styled.div`
   }
 `;
 
+const TextWrapper = styled.div`
+  font-family: NotoSansKR-400;
+  font-size: 8px;
+  color: #999999;
+  width: 90%;
+  text-align: right;
+
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
 const ScrollbarsWrapper = styled(Scrollbars)`
   max-height: 80vh;
   max-width: 35vw; // 40vw;
@@ -24,7 +36,7 @@ const ScrollbarsWrapper = styled(Scrollbars)`
   background-color: #bbbbbb;
 
   @media only screen and (max-width: 768px) {
-    max-width: 95%;
+    max-width: 90%;
   }
 `;
 
@@ -35,7 +47,7 @@ const SelectWrapper = styled.div`
   background-color: #bbbbbb;
 
   @media only screen and (max-width: 768px) {
-    max-width: 100%;
+    max-width: 100vw;
     margin-bottom: 10px;
   }
 `;
@@ -64,6 +76,7 @@ function Select() {
           setSelectList={setSelectList}
         />
       </SelectWrapper>
+      <TextWrapper>길게 누르면 자세한 정보를 알 수 있어요!</TextWrapper>
       <ScrollbarsWrapper>
         <SelectListContainer
           selectArray={selectArray}

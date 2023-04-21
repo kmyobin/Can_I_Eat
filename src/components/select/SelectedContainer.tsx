@@ -8,18 +8,21 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   overflow-x: auto;
-`;
+  float: left; // 왼쪽부터 채워지게
+  margin: 3px 0px;
 
-const MaxWidthGridCard = styled(GridCard)`
-  width: 50px;
-  height: 50px;
-
-  /*img {
-    max-width: 100%;
-    max-height: 100%;
-  }*/
+  & > * {
+    // Wrapper의 자식 컴포넌트는 모두 크기가 50으로 고정
+    max-width: 55px;
+    max-height: 55px;
+    margin-left: 5px;
+    margin-right: 5px;
+    @media only screen and (max-width: 768px) {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
 `;
 
 function SelectedContainer({ selectList, setSelectList }: SelectListProps) {
@@ -28,18 +31,17 @@ function SelectedContainer({ selectList, setSelectList }: SelectListProps) {
   });
   return (
     <Wrapper>
-      {selectList &&
-        selectList.map((selectItem: SelectItem, index) => (
-          <MaxWidthGridCard
-            key={selectItem.id}
-            id={selectItem.id}
-            src={selectItem.src}
-            name={selectItem.name}
-            alt={selectItem.alt}
-            selectList={selectList}
-            setSelectList={setSelectList}
-          />
-        ))}
+      {selectList.map((selectItem: SelectItem, index) => (
+        <GridCard
+          key={selectItem.id}
+          id={selectItem.id}
+          src={selectItem.src}
+          name={selectItem.name}
+          alt={selectItem.alt}
+          selectList={selectList}
+          setSelectList={setSelectList}
+        />
+      ))}
     </Wrapper>
   );
 }
