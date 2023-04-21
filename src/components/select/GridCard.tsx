@@ -42,7 +42,7 @@ const Image = styled.img`
 
 const Text = styled.div`
   position: absolute;
-  font-size: 6px;
+  font-size: 10px; //6px;
   top: 50%;
   left: 48.7%; //50%;
   text-align: center;
@@ -50,6 +50,7 @@ const Text = styled.div`
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.35s ease-in-out;
+  white-space: nowrap; // 폰트 한 줄
 
   ${ImageWrapper}:hover & {
     opacity: 1;
