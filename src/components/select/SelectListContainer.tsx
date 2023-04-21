@@ -3,16 +3,16 @@ import { Row } from "antd";
 import GridCards from "./GridCards";
 import styled from "styled-components";
 
-interface SelectItem {
+type SelectItem = {
   id: number;
   name: string;
   src: string;
   alt: string;
-}
+};
 
-interface SelectList {
+type SelectList = {
   selectList: SelectItem[];
-}
+};
 
 const SelectListWrapper = styled.div`
   width: 95%;

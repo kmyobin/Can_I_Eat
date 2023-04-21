@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Col } from "antd";
 import styled from "styled-components";
 
-interface GridCardsProps {
+type GridCardsProps = {
   id: number;
   name: string;
   src: string;
   alt: string;
   onClick: () => void;
-}
+};
 
 interface ImageWrapperProps {
   click: boolean;

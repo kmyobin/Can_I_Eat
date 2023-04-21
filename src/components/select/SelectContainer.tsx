@@ -4,12 +4,12 @@ import SelectedContainer from "./SelectedContainer";
 import MyButton2 from "../common/MyButton2";
 import ResetButton from "../common/ResetButton";
 
-interface SelectItem {
+type SelectItem = {
   id: number;
   name: string;
   src: string;
   alt: string;
-}
+};
 
 interface SelectList {
   selectList?: SelectItem[];

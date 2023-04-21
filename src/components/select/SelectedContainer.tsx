@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-interface SelectItem {
+
+type SelectItem = {
   id: number;
   name: string;
   src: string;
   alt: string;
-}
+};
 
-interface SelectList {
+type SelectList = {
   selectList?: SelectItem[];
-}
+};
 
 const Wrapper = styled.div`
   width: 100%;

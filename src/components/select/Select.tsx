@@ -2,7 +2,7 @@ import React from "react";
 import SelectListContainer from "./SelectListContainer";
 import { selectList } from "../../assets/select";
 import styled from "styled-components";
-import { Scrollbars } from "rc-scrollbars/lib/Scrollbars";
+import { Scrollbars } from "rc-scrollbars";
 import SelectContainer from "./SelectContainer";
 
 const Wrapper = styled.div`
