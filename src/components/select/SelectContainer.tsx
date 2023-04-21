@@ -3,17 +3,8 @@ import styled from "styled-components";
 import SelectedContainer from "./SelectedContainer";
 import MyButton2 from "../common/MyButton2";
 import ResetButton from "../common/ResetButton";
-
-type SelectItem = {
-  id: number;
-  name: string;
-  src: string;
-  alt: string;
-};
-
-interface SelectList {
-  selectList?: SelectItem[];
-}
+import { SelectListProps } from "./Select";
+import { SelectItem } from "./Select";
 const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
@@ -24,24 +15,39 @@ const Wrapper = styled.div`
 `;
 
 const TextArea = styled.div`
-  margin-bottom: 3px;
-  font-family: NotoSansKR-700;
-  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: NotoSansKR-500;
+  font-size: 25px;
+
   text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 const ButtonWrapper = styled.div`
   width: 100%;
 `;
 
-function SelectContainer({ selectList }: SelectList) {
+const ButtonWrapper2 = styled(ButtonWrapper)`
+  display: flex;
+  justify-content: center;
+`;
+
+function SelectContainer({ selectList, setSelectList }: SelectListProps) {
   return (
     <Wrapper>
       <TextArea>당신은 어떤 사람인가요?</TextArea>
       <ButtonWrapper>
-        <ResetButton />
+        <ResetButton selectList={selectList} setSelectList={setSelectList} />
       </ButtonWrapper>
-      <SelectedContainer selectList={selectList} />
-      <MyButton2 text="확정 ✅" />
+      <SelectedContainer
+        selectList={selectList}
+        setSelectList={setSelectList}
+      />
+      <ButtonWrapper2>
+        <MyButton2 text="확정 ✅" />
+      </ButtonWrapper2>
     </Wrapper>
   );
 }

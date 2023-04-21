@@ -14,6 +14,15 @@ const StyledButton = styled(Button)`
   color: white;
   font-family: NotoSansKR-500;
   width: 200px;
+  text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    font-family: NotoSansKR-400;
+
+    width: 65px;
+    height: 25px;
+    font-size: 11px;
+  }
 `;
 function MyButton2({ text }: text) {
   return <StyledButton>{text}</StyledButton>;

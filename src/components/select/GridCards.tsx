@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Col } from "antd";
 import styled from "styled-components";
-
-type GridCardsProps = {
+import { SelectListProps } from "./Select";
+import { SelectItem } from "./Select";
+import GridCard from "./GridCard";
+export type GridCardsProps = {
   id: number;
   name: string;
   src: string;
   alt: string;
-  onClick: () => void;
+  selectList: SelectItem[]; // 선택된 리스트
+  setSelectList: (selectList: SelectItem[]) => void | undefined;
 };
 
-interface ImageWrapperProps {
+export type ImageWrapperProps = {
   click: boolean;
-}
+};
 
 const ImageWrapper = styled.div<ImageWrapperProps>`
   display: flex;
@@ -66,22 +69,24 @@ const Text = styled.div`
   }
 `;
 
-function GridCards({ id, src, name, alt, onClick }: GridCardsProps) {
-  const [isClick, setIsClick] = useState(false);
-  const onClickImage = (id: number) => {
-    console.log(id + "의 이벤트");
-    setIsClick(!isClick);
-  };
+function GridCards({
+  id,
+  src,
+  name,
+  alt,
+  selectList,
+  setSelectList,
+}: GridCardsProps) {
   return (
-    <Col lg={6} md={8} xs={24}>
-      <ImageWrapper
-        click={isClick}
-        title={name}
-        onClick={() => onClickImage(id)}
-      >
-        <Image src={require(`../../assets${src}`)} alt={alt} />
-        <Text>{name}</Text>
-      </ImageWrapper>
+    <Col lg={6} md={6} xs={8}>
+      <GridCard
+        id={id}
+        src={src}
+        name={name}
+        alt={alt}
+        selectList={selectList}
+        setSelectList={setSelectList}
+      />
     </Col>
   );
 }

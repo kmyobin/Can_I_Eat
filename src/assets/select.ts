@@ -27,7 +27,7 @@ const 당뇨병 = `${IMAGES_PATH}/당뇨병.png`;
 const 영유아 = `${IMAGES_PATH}/영유아.png`;
 const 힌두교 = `${IMAGES_PATH}/힌두교.png`;
 
-export const selectList = [
+export const selectArray = [
   /*{
     id: 1,
     name: "힌두교",
