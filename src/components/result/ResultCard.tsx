@@ -14,16 +14,29 @@ const ResultCardImage = styled.img`
   width: 400px;
   height: 200px;
   background-image: url(${props => props.src});
+
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+    height: 100px;
+  }
 `;
 const ResultCardFoodName = styled.p`
   margin: 20px 0 0;
   font-size: 36px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 const ResultCardJudge = styled.p<ResultCardJudgeProps>`
   margin: 0;
   
   color: ${props => props.isPossible ? '#00B578' : '#FF3141'};
   font-size: 36px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 function ResultCard({selectedFood, rawMaterials}:ResultCardProps) {

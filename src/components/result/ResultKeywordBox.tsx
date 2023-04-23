@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   
   width: 50%;
   height: 400px;
+
+  @media only screen and (max-width: 768px) {
+    height: 300px;
+  }
 `;
 const ResultKeywordMessage = styled.div`
   display: flex;
@@ -20,6 +24,10 @@ const ResultKeywordMessage = styled.div`
   
   font-size: 36px;
   font-weight: 400;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 

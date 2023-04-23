@@ -47,6 +47,12 @@ const ResultChipItem = styled.div<ResultChipItemProps>`
     color: #FFF;
     font-size: 20px;
     font-weight: 400;
+
+  @media only screen and (max-width: 768px) {
+    width: 64px;
+    height: 30px;
+    font-size: 11px;
+  }
     
 `;
 
