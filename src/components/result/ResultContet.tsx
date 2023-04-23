@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function ResultContent({searchResults,handleSearchResultsChange}:ResultContentProps) {
+function ResultContent({searchResults}:ResultContentProps) {
     const keywords = ['감자','돼지', '밀', '어육', '복숭아', '땅콩'];
     const { foodId } = useParams();
     const [selectedFood] = useState<SearchResult>(searchResults.filter(({PRDLST_REPORT_NO}) => PRDLST_REPORT_NO === foodId)[0])
