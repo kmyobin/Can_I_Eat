@@ -62,7 +62,7 @@ function ResultChipList({rawMaterials}:ResultChipListProps) {
         <Wrapper>
             {
                 rawMaterials.map(({rawMaterialName, isMatched}) => (
-                    <ResultChipItem isMatched={isMatched}>{rawMaterialName}</ResultChipItem>
+                    <ResultChipItem key={rawMaterialName} isMatched={isMatched}>{rawMaterialName}</ResultChipItem>
                 ))
             }
         </Wrapper>
