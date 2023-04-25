@@ -4,10 +4,11 @@ import styled from "styled-components";
 import { SelectItem } from "./Select";
 import GridCard from "./GridCard";
 export type GridCardsProps = {
-  id: number;
+  /*id: number;
   name: string;
   src: string;
-  alt: string;
+  alt: string;*/
+  selectItem: SelectItem;
   selectList: SelectItem[]; // 선택된 리스트
   setSelectList: (selectList: SelectItem[]) => void | undefined;
 };
@@ -68,21 +69,11 @@ const Text = styled.div`
   }
 `;
 
-function GridCards({
-  id,
-  src,
-  name,
-  alt,
-  selectList,
-  setSelectList,
-}: GridCardsProps) {
+function GridCards({ selectItem, selectList, setSelectList }: GridCardsProps) {
   return (
     <Col lg={6} md={6} xs={8}>
       <GridCard
-        id={id}
-        src={src}
-        name={name}
-        alt={alt}
+        selectItem={selectItem}
         selectList={selectList}
         setSelectList={setSelectList}
       />

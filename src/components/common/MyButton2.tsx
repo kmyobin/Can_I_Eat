@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
 import { SelectItem } from "components/select/Select";
+import { SelectContext } from "App/SelectContextProvider";
+import { useNavigate } from "react-router-dom";
 
 type MyButton2Props = { text?: string; selectList: SelectItem[] };
 
@@ -30,7 +32,21 @@ const StyledButton = styled(Button)<MyButton2Props>`
   }
 `;
 function MyButton2({ text, selectList }: MyButton2Props) {
-  return <StyledButton selectList={selectList}>{text}</StyledButton>;
+  const { selectedList, setSelectedListHandler } = useContext(SelectContext);
+  const navigate = useNavigate();
+
+  function onClickButton() {
+    let typesList = selectList.map((item) => item.types).flat();
+    //console.log(typesList);
+    setSelectedListHandler(typesList);
+    navigate("/search"); // 다음 페이지로 이동
+  }
+
+  return (
+    <StyledButton selectList={selectList} onClick={onClickButton}>
+      {text}
+    </StyledButton>
+  );
 }
 
 export default MyButton2;
