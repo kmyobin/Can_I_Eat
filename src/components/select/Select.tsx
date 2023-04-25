@@ -4,6 +4,7 @@ import { selectArray } from "assets/select";
 import styled from "styled-components";
 import SelectContainer from "components/select/SelectContainer";
 import { SelectItem } from "components/select/types";
+
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
