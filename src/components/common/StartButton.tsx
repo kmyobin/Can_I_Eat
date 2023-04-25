@@ -1,10 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import styled from "styled-components";
-
-type TextType = {
-  text: string;
-};
+import { StartButtonProps } from "components/common/types";
 
 const StyledButton = styled(Button)`
   &:where(.css-dev-only-do-not-override-1xusghl).ant-btn-default:not(
@@ -20,8 +17,8 @@ const StyledButton = styled(Button)`
   border-radius: 20px;
 `;
 
-function MyButton({ text }: TextType) {
+function StartButton({ text }: StartButtonProps) {
   return <StyledButton>{text}</StyledButton>;
 }
 
-export default MyButton;
+export default StartButton;

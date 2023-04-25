@@ -1,14 +1,11 @@
 import React, { createContext, useState } from "react";
-
-type SelectContextType = {
-  selectedList: string[];
-  setSelectedListHandler: (selectedList: string[]) => void;
-};
+import { SelectContextType } from "components/common/types";
 
 export const SelectContext = createContext<SelectContextType>({
   selectedList: [],
   setSelectedListHandler: (selectedList: string[]) => {},
 });
+
 function SelectContextProvider({ children }: { children: React.ReactNode }) {
   const [selectedList, setSelectedList] = useState<string[]>([]);
 

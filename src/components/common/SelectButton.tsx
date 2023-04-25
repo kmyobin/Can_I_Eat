@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import { SelectItem } from "components/select/types";
 import { SelectContext } from "components/common/SelectContextProvider";
 import { useNavigate } from "react-router-dom";
+import { SelectButtonProps } from "components/common/types";
 
-type MyButton2Props = { text?: string; selectList: SelectItem[] };
-
-const StyledButton = styled(Button)<MyButton2Props>`
+const StyledButton = styled(Button)<SelectButtonProps>`
   &:where(.css-dev-only-do-not-override-1xusghl).ant-btn-default:not(
       :disabled
     ):hover {
@@ -31,7 +29,8 @@ const StyledButton = styled(Button)<MyButton2Props>`
     font-size: 11px;
   }
 `;
-function MyButton2({ text, selectList }: MyButton2Props) {
+
+function SelectButton({ text, selectList }: SelectButtonProps) {
   const { selectedList, setSelectedListHandler } = useContext(SelectContext);
   const navigate = useNavigate();
 
@@ -49,4 +48,4 @@ function MyButton2({ text, selectList }: MyButton2Props) {
   );
 }
 
-export default MyButton2;
+export default SelectButton;
