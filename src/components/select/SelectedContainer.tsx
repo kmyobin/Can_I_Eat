@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { SelectListProps, SelectItem } from "components/select/types";
-
 import GridCard from "components/select/GridCard";
 
 const Wrapper = styled.div`
@@ -44,9 +43,6 @@ const Wrapper = styled.div`
 `;
 
 function SelectedContainer({ selectList, setSelectList }: SelectListProps) {
-  useEffect(() => {
-    console.log(selectList);
-  });
   return (
     <Wrapper>
       {selectList.map((selectItem: SelectItem, index) => (
