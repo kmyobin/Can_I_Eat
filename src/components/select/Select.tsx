@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import SelectListContainer from "./SelectListContainer";
-import { selectArray } from "../../assets/select";
+import SelectListContainer from "components/select/SelectListContainer";
+import { selectArray } from "assets/select";
 import styled from "styled-components";
-import SelectContainer from "./SelectContainer";
+import SelectContainer from "components/select/SelectContainer";
 
 const Wrapper = styled.div`
   display: flex;

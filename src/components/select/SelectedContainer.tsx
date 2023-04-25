@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { SelectListProps } from "./Select";
-import { SelectItem } from "./Select";
-import GridCard from "./GridCard";
+import { SelectListProps } from "components/select/Select";
+import { SelectItem } from "components/select/Select";
+import GridCard from "components/select/GridCard";
 
 const Wrapper = styled.div`
   width: 100%;

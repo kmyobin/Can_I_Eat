@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import SelectedContainer from "./SelectedContainer";
-import MyButton2 from "../common/MyButton2";
-import ResetButton from "../common/ResetButton";
-import { SelectListProps } from "./Select";
+import SelectedContainer from "components/select/SelectedContainer";
+import SelectButton from "components/common/SelectButton";
+import ResetButton from "components/common/ResetButton";
+import { SelectListProps } from "components/select/Select";
 
 const Wrapper = styled.div`
   justify-content: space-between;
@@ -61,7 +61,7 @@ function SelectContainer({ selectList, setSelectList }: SelectListProps) {
         setSelectList={setSelectList}
       />
       <ButtonWrapper2>
-        <MyButton2 text="확정 ✅" selectList={selectList} />
+        <SelectButton text="확정 ✅" selectList={selectList} />
       </ButtonWrapper2>
     </Wrapper>
   );

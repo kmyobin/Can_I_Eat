@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import styled from "styled-components";
 import { intro } from "assets/intro";
-import MyButton from "components/common/MyButton";
+import MyButton from "components/common/StartButton";
 import { useNavigate } from "react-router-dom";
 
 const Style = {
