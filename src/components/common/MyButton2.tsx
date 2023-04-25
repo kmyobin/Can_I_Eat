@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
 import { SelectItem } from "components/select/Select";
-import { SelectContext } from "App/SelectContextProvider";
+import { SelectContext } from "components/common/SelectContextProvider";
 import { useNavigate } from "react-router-dom";
 
 type MyButton2Props = { text?: string; selectList: SelectItem[] };
