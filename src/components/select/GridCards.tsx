@@ -1,17 +1,7 @@
 import React from "react";
 import { Col } from "antd";
-import { SelectItem } from "components/select/Select";
 import GridCard from "components/select/GridCard";
-
-export type GridCardsProps = {
-  selectItem: SelectItem;
-  selectList: SelectItem[]; // 선택된 리스트
-  setSelectList: (selectList: SelectItem[]) => void | undefined;
-};
-
-export type ImageWrapperProps = {
-  click: boolean;
-};
+import { GridCardsProps } from "components/select/types";
 
 function GridCards({ selectItem, selectList, setSelectList }: GridCardsProps) {
   return (

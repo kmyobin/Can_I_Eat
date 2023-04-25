@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import { SelectItem } from "components/select/Select";
+import { SelectItem } from "components/select/types";
 import { SelectContext } from "components/common/SelectContextProvider";
 import { useNavigate } from "react-router-dom";
 

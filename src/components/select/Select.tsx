@@ -3,7 +3,7 @@ import SelectListContainer from "components/select/SelectListContainer";
 import { selectArray } from "assets/select";
 import styled from "styled-components";
 import SelectContainer from "components/select/SelectContainer";
-
+import { SelectItem } from "components/select/types";
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -65,20 +65,6 @@ const SelectWrapper = styled.div`
     margin-bottom: 10px;
   }
 `;
-
-export type SelectItem = {
-  id: number;
-  name: string;
-  src: string;
-  alt: string;
-  types: string[];
-};
-
-export type SelectListProps = {
-  selectList: SelectItem[]; // 선택된 리스트
-  setSelectList: (selectList: SelectItem[]) => void | undefined;
-  selectArray?: SelectItem[]; // 기존 22개의 리스트
-};
 
 function Select() {
   const [selectList, setSelectList] = useState<SelectItem[]>([]);

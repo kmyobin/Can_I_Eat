@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import { SelectListProps } from "components/select/Select";
+import { SelectListProps } from "components/select/types";
 
 const StyledButton = styled(Button)`
   &:where(.css-dev-only-do-not-override-1xusghl).ant-btn-default:not(

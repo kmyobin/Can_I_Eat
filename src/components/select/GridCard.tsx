@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { GridCardsProps } from "components/select/GridCards";
-import { ImageWrapperProps } from "components/select/GridCards";
+import { GridCardsProps, ImageWrapperProps } from "./types";
 import { Col } from "antd";
 
 const ImageWrapper = styled.div<ImageWrapperProps>`
