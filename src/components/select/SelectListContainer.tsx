@@ -25,10 +25,7 @@ function SelectListContainer({
           selectArray.map((selectItem: SelectItem) => (
             <GridCards
               key={selectItem.id}
-              id={selectItem.id}
-              src={selectItem.src}
-              name={selectItem.name}
-              alt={selectItem.alt}
+              selectItem={selectItem}
               selectList={selectList}
               setSelectList={setSelectList}
             />

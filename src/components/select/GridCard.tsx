@@ -57,25 +57,18 @@ const Text = styled.div`
   }
 `;
 
-function GridCard({
-  id,
-  src,
-  name,
-  alt,
-  selectList,
-  setSelectList,
-}: GridCardsProps) {
+function GridCard({ selectItem, selectList, setSelectList }: GridCardsProps) {
   const [isClick, setIsClick] = useState(false);
 
   useEffect(() => {
     // 이미 선택되어있는 아이템이라면 isClick을 true로 설정
-    const isSelected = selectList.find((item) => item.id === id);
+    const isSelected = selectList.find((item) => item.id === selectItem.id);
     setIsClick(!!isSelected);
-  }, [selectList, id]);
+  }, [selectList, selectItem.id]);
 
   function onClickImage(id: number) {
     setIsClick(!isClick);
-    const selectedItem = { id, src, name, alt };
+    const selectedItem = selectItem;
     const isSelected = selectList.find((item) => item.id === id);
 
     if (isSelected) {
@@ -91,11 +84,14 @@ function GridCard({
     <Col xs={24}>
       <ImageWrapper
         click={isClick}
-        title={name}
-        onClick={() => onClickImage(id)}
+        title={selectItem.name}
+        onClick={() => onClickImage(selectItem.id)}
       >
-        <Image src={require(`../../assets${src}`)} alt={alt} />
-        <Text>{name}</Text>
+        <Image
+          src={require(`../../assets${selectItem.src}`)}
+          alt={selectItem.alt}
+        />
+        <Text>{selectItem.name}</Text>
       </ImageWrapper>
     </Col>
   );

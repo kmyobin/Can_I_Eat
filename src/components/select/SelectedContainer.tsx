@@ -52,10 +52,7 @@ function SelectedContainer({ selectList, setSelectList }: SelectListProps) {
       {selectList.map((selectItem: SelectItem, index) => (
         <GridCard
           key={selectItem.id}
-          id={selectItem.id}
-          src={selectItem.src}
-          name={selectItem.name}
-          alt={selectItem.alt}
+          selectItem={selectItem}
           selectList={selectList}
           setSelectList={setSelectList}
         />

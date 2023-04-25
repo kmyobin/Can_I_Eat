@@ -36,8 +36,9 @@ function MyButton2({ text, selectList }: MyButton2Props) {
   const navigate = useNavigate();
 
   function onClickButton() {
-    console.log(selectList);
-    //setSelectedListHandler(selectList);
+    let typesList = selectList.map((item) => item.types).flat();
+    //console.log(typesList);
+    setSelectedListHandler(typesList);
     navigate("/search"); // 다음 페이지로 이동
   }
 
