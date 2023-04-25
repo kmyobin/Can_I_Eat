@@ -65,9 +65,9 @@ function Header() {
       <Style.Logo>Can I Eat?</Style.Logo>
       <Style.Redo>
         {/* 선택 페이지나 결과 페이지에서만 Redo 버튼 활성화 */}
-        {(Lo.includes("/select") || Lo.includes("/result")) && (
-          <UndoOutlined onClick={onClickUndo} />
-        )}
+        {(Lo.includes("/select") ||
+          Lo.includes("/result") ||
+          Lo.includes("/search")) && <UndoOutlined onClick={onClickUndo} />}
       </Style.Redo>
     </Style.Header>
   );
