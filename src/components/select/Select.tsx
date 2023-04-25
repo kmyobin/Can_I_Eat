@@ -71,6 +71,7 @@ export type SelectItem = {
   name: string;
   src: string;
   alt: string;
+  types: string[];
 };
 
 export type SelectListProps = {
