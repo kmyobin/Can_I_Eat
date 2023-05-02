@@ -20,24 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/select" element={<SelectPage />} />
-          <Route
-            path="/search"
-            element={
-              <SearchPage
-                searchResults={searchResults}
-                handleSearchResultsChange={handleSearchResultsChange}
-              />
-            }
-          />
-          <Route
-            path="/result/:foodId"
-            element={
-              <ResultPage
-                searchResults={searchResults}
-                handleSearchResultsChange={handleSearchResultsChange}
-              />
-            }
-          />
+          <Route path="/search" element={<SearchPage/>}/>
+          <Route path="/result/:foodId" element={<ResultPage/>}/>
         </Routes>
       </BrowserRouter>
     </AppContextProvider>
