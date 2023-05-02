@@ -15,22 +15,6 @@ export type SearchItemProps = {
 export type SearchScrollBoxProps = {
     isResultExists: boolean;
 };
-export type SearchPageProps = {
-    searchResults : SearchResult[];
-    handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
-}
-export type SearchContentProps = {
-    searchResults : SearchResult[];
-    handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
-}
-export type ResultPageProps = {
-    searchResults : SearchResult[];
-    handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
-}
-export type ResultContentProps = {
-    searchResults : SearchResult[];
-    handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
-}
 export type ResultCardProps = {
     selectedFood : SearchResult;
     rawMaterials : rawMaterial[];
