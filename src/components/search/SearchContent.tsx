@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import SearchForm from "./SearchForm";
 import SearchList from "./SearchList";
-import {SearchContentProps} from "../../type/props";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function SearchContent({searchResults, handleSearchResultsChange}:SearchContentProps) {
+function SearchContent() {
     const [isLoading, setIsLoading] = useState(false);
 
     function handleIsLoadingToggle() {
@@ -26,14 +25,8 @@ function SearchContent({searchResults, handleSearchResultsChange}:SearchContentP
 
     return (
         <Wrapper>
-            <SearchForm
-                handleSearchResultsChange = {handleSearchResultsChange}
-                handleIsLoadingToggle = {handleIsLoadingToggle}
-            />
-            <SearchList
-                isLoading = {isLoading}
-                searchResults = {searchResults}
-            />
+            <SearchForm handleIsLoadingToggle={handleIsLoadingToggle}/>
+            <SearchList isLoading = {isLoading}/>
         </Wrapper>
     );
 }

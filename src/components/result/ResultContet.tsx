@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import styled from "styled-components";
 import ResultCard from "./ResultCard";
 import ResultKeywordBox from "./ResultKeywordBox";
 import {useParams} from "react-router-dom";
 import {ResultContentProps} from "../../type/props";
 import {rawMaterial, SearchResult} from "../../type/data";
+import {AppContext} from "../common/AppContextProvider";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,8 +20,9 @@ const Wrapper = styled.div`
   }
 `;
 
-function ResultContent({searchResults}:ResultContentProps) {
+function ResultContent() {
     const keywords = ['감자','돼지', '밀', '어육', '복숭아', '땅콩'];
+    const {searchResults} = useContext(AppContext);
     const { foodId } = useParams();
     const [selectedFood] = useState<SearchResult>(searchResults.filter(({PRDLST_REPORT_NO}) => PRDLST_REPORT_NO === foodId)[0])
     const list = selectedFood.RAWMTRL_NM.split(",").map(item => ({

@@ -1,12 +1,10 @@
 import {rawMaterial, SearchResult} from "./data";
 
 export type SearchFormProps = {
-    handleSearchResultsChange: (newSearchResults: SearchResult[]) => void;
     handleIsLoadingToggle: () => void;
 };
 export type SearchListProps = {
     isLoading: boolean;
-    searchResults: SearchResult[]
 };
 export type SearchItemProps = {
     id: string;

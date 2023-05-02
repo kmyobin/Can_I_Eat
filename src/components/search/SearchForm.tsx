@@ -1,10 +1,11 @@
-import React, {memo, useState} from "react";
+import React, {memo, useContext, useState} from "react";
 import styled from "styled-components";
 import magnifyImg from '../../assets/images/magnify.png';
 import axios from "axios";
 import {makeFoodImgURL, makeFoodRawMaterialURL} from "../../utils";
 import {FoodImageData, FoodImageResponse, FoodMaterialData, FoodMaterialResponse, SearchResult} from "../../type/data";
 import {SearchFormProps} from "../../type/props";
+import {AppContext} from "../common/AppContextProvider";
 
 const Wrapper = styled.div`
   display: flex;
@@ -84,8 +85,9 @@ const SearchHeadingWrapper = memo(() => {
     return <SearchHeading>이제 식품을 검색해주세요!</SearchHeading>
 });
 
-function SearchForm({handleSearchResultsChange, handleIsLoadingToggle} : SearchFormProps) {
+function SearchForm({handleIsLoadingToggle} : SearchFormProps) {
     const [searchKeyword, setSearchKeyword] = useState('');
+    const {handleSearchResultsChange} = useContext(AppContext);
 
     function handleSearchKeywordChange(event: React.ChangeEvent<HTMLInputElement>) {
         setSearchKeyword(event.target.value);

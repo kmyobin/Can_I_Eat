@@ -3,13 +3,10 @@ import PageTemplate from "../layout/PageTemplate";
 import SearchContent from "../components/search/SearchContent";
 import {SearchPageProps} from "../type/props";
 
-function SearchPage({searchResults,handleSearchResultsChange}:SearchPageProps) {
+function SearchPage() {
     return (
             <PageTemplate content={
-                <SearchContent
-                    searchResults={searchResults}
-                    handleSearchResultsChange={handleSearchResultsChange}
-                />}/>
+                <SearchContent/>}/>
     );
 }
 

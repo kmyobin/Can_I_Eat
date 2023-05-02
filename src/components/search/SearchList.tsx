@@ -1,9 +1,10 @@
-import React, {useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import styled from "styled-components";
 import SearchItem from "./SearchItem";
 import {Skeleton} from "antd";
 import {SearchListProps, SearchScrollBoxProps} from "../../type/props";
 import {SearchResult} from "../../type/data";
+import {AppContext} from "../common/AppContextProvider";
 
 const Wrapper = styled.div`
   display: flex;
@@ -44,7 +45,9 @@ const SearchScrollBox = styled.div<SearchScrollBoxProps>`
   }
 `;
 
-function SearchList({searchResults, isLoading} : SearchListProps) {
+function SearchList({isLoading} : SearchListProps) {
+    const {searchResults} = useContext(AppContext);
+
     useEffect(() => {
     },[searchResults]);
 
