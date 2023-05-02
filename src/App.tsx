@@ -6,7 +6,7 @@ import SelectPage from "pages/SelectPage";
 import SearchPage from "pages/SearchPage";
 import ResultPage from "pages/ResultPage";
 import { SearchResult } from "type/data";
-import SelectContextProvider from "components/common/SelectContextProvider";
+import AppContextProvider from "components/common/AppContextProvider";
 
 function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <SelectContextProvider>
+    <AppContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -40,7 +40,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-    </SelectContextProvider>
+    </AppContextProvider>
   );
 }
 

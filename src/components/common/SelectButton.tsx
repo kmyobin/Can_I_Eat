@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import { SelectContext } from "components/common/SelectContextProvider";
 import { useNavigate } from "react-router-dom";
 import { SelectButtonProps } from "components/common/types";
+import {AppContext} from "./AppContextProvider";
 
 const StyledButton = styled(Button)<SelectButtonProps>`
   &:where(.css-dev-only-do-not-override-1xusghl).ant-btn-default:not(
@@ -31,7 +31,7 @@ const StyledButton = styled(Button)<SelectButtonProps>`
 `;
 
 function SelectButton({ text, selectList }: SelectButtonProps) {
-  const { selectedList, setSelectedListHandler } = useContext(SelectContext);
+  const { selectedList, setSelectedListHandler } = useContext(AppContext);
   const navigate = useNavigate();
 
   function onClickButton() {
