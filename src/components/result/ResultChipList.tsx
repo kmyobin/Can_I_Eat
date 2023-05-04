@@ -33,9 +33,7 @@ const Wrapper = styled.div`
 `;
 
 const ResultChipItem = styled.div<ResultChipItemProps>`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   
     width: 100px;
     height: 40px;
@@ -43,7 +41,12 @@ const ResultChipItem = styled.div<ResultChipItemProps>`
     margin-bottom: 20px;
     background: ${props => props.isMatched ? '#FF3141' : '#00B578'};
     border-radius: 20px;
+    overflow: hidden;
   
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 40px;
     color: #FFF;
     font-size: 20px;
     font-weight: 400;
@@ -62,7 +65,11 @@ function ResultChipList({rawMaterials}:ResultChipListProps) {
         <Wrapper>
             {
                 rawMaterials.map(({rawMaterialName, isMatched}) => (
-                    <ResultChipItem key={rawMaterialName} isMatched={isMatched}>{rawMaterialName}</ResultChipItem>
+                    <ResultChipItem key={rawMaterialName}
+                                    isMatched={isMatched}
+                                    title={rawMaterialName}
+                    >
+                        {rawMaterialName}</ResultChipItem>
                 ))
             }
         </Wrapper>
