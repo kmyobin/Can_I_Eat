@@ -101,6 +101,7 @@ export type SearchResult = {
 };
 
 export type rawMaterial = {
+    id: number;
     rawMaterialName : string;
     isMatched: boolean;
 }

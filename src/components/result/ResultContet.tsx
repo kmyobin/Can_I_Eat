@@ -24,7 +24,8 @@ function ResultContent() {
     const {searchResults} = useContext(AppContext);
     const { foodId } = useParams();
     const [selectedFood] = useState<SearchResult>(searchResults.filter(({PRDLST_REPORT_NO}) => PRDLST_REPORT_NO === foodId)[0])
-    const list = selectedFood.RAWMTRL_NM.split(",").map(item => ({
+    const list = selectedFood.RAWMTRL_NM.split(",").map((item,id) => ({
+        id,
         rawMaterialName: item,
         isMatched: new RegExp(`${selectedList.join("|")}`, 'gi').test(item)
     }));

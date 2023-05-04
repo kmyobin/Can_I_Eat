@@ -69,8 +69,8 @@ function ResultChipList({rawMaterials}:ResultChipListProps) {
     return (
         <Wrapper>
             {
-                rawMaterials.map(({rawMaterialName, isMatched}) => (
-                    <ResultChipItem key={rawMaterialName}
+                rawMaterials.map(({id,rawMaterialName, isMatched}) => (
+                    <ResultChipItem key={id}
                                     isMatched={isMatched}
                                     title={rawMaterialName}
                                     onClick={(e) => {
