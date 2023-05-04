@@ -26,6 +26,7 @@ const SearchHeading = styled.h1`
   height: 140px;
   margin: 0;
   
+  font-family: NotoSansKR-700;
   font-size: 36px;
   font-weight: 500;
   text-align: center;

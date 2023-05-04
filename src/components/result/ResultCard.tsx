@@ -22,6 +22,7 @@ const ResultCardImage = styled.img`
 `;
 const ResultCardFoodName = styled.p`
   margin: 20px 0 0;
+  font-family: NotoSansKR-500;
   font-size: 36px;
 
   @media only screen and (max-width: 768px) {

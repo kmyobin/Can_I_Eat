@@ -18,10 +18,11 @@ const ResultKeywordMessage = styled.div`
   display: flex;
   align-items: center;
   
-  width: 268px;
+  width: 280px;
   height: 50px;
   margin-bottom: 40px;
   
+  font-family: NotoSansKR-500;
   font-size: 36px;
   font-weight: 400;
 
