@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { intro } from "assets/fixtures/intro";
 import MyButton from "components/common/StartButton";
@@ -9,7 +9,6 @@ const Style = {
     width: 100%;
     height: 100%;
     display: flex;
-    //justify-content: space-between;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -30,7 +29,6 @@ const Style = {
 
 function MainContent() {
   const navigate = useNavigate();
-  //const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
