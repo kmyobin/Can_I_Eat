@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import styled from "styled-components";
-import { intro } from "assets/intro";
+import { intro } from "assets/fixtures/intro";
 import MyButton from "components/common/StartButton";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const Style = {
   `,
 };
 
-function Main() {
+function MainContent() {
   const navigate = useNavigate();
   //const [currentIntro, setCurrentIntro] = useState<Intro[]>(intro);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -77,4 +77,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainContent;

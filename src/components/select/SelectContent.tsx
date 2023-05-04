@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SelectListContainer from "components/select/SelectListContainer";
-import { selectArray } from "assets/select";
+import { selectArray } from "assets/fixtures/select";
 import styled from "styled-components";
 import SelectContainer from "components/select/SelectContainer";
 import { SelectItem } from "components/select/types";
@@ -66,7 +66,7 @@ const SelectWrapper = styled.div`
   }
 `;
 
-function Select() {
+function SelectContent() {
   const [selectList, setSelectList] = useState<SelectItem[]>([]);
 
   return (
@@ -89,4 +89,4 @@ function Select() {
   );
 }
 
-export default Select;
+export default SelectContent;

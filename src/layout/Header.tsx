@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "App.css";
+import "../App.css";
 import { UndoOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 const Style = {
