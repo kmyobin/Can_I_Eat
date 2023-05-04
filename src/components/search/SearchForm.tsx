@@ -3,8 +3,8 @@ import styled from "styled-components";
 import magnifyImg from 'assets/images/magnify.png';
 import axios from "axios";
 import {makeFoodImgURL, makeFoodRawMaterialURL} from "utils";
-import {FoodImageData, FoodImageResponse, FoodMaterialData, FoodMaterialResponse, SearchResult} from "type/data";
-import {SearchFormProps} from "type/props";
+import {FoodImageData, FoodImageResponse, FoodMaterialData, FoodMaterialResponse, SearchResult} from "types/data";
+import {SearchFormProps} from "types/props";
 import {AppContext} from "components/common/AppContextProvider";
 
 const Wrapper = styled.div`

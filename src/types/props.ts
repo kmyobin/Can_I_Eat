@@ -1,5 +1,24 @@
-import {rawMaterial, SearchResult} from "./data";
+import {rawMaterial, SearchResult, SelectItem} from "./data";
 
+export type ImageWrapperProps = {
+    click: boolean;
+};
+export type GridCardsProps = {
+    selectItem: SelectItem;
+    selectList: SelectItem[]; // 선택된 리스트
+    setSelectList: (selectList: SelectItem[]) => void | undefined;
+};
+export type SelectListProps = {
+    selectList: SelectItem[]; // 선택된 리스트
+    setSelectList: (selectList: SelectItem[]) => void | undefined;
+    selectArray?: SelectItem[]; // 기존 22개의 리스트
+};
+export type StartButtonProps = {
+    text: string;
+};
+export type SelectButtonProps = {
+    text?: string; selectList: SelectItem[]
+};
 export type SearchFormProps = {
     handleIsLoadingToggle: () => void;
 };

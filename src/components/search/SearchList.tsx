@@ -2,8 +2,8 @@ import React, {useContext, useEffect} from "react";
 import styled from "styled-components";
 import SearchItem from "components/search/SearchItem";
 import {Skeleton} from "antd";
-import {SearchListProps, SearchScrollBoxProps} from "type/props";
-import {SearchResult} from "type/data";
+import {SearchListProps, SearchScrollBoxProps} from "types/props";
+import {SearchResult} from "types/data";
 import {AppContext} from "components/common/AppContextProvider";
 
 const Wrapper = styled.div`

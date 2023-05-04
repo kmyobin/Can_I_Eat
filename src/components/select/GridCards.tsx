@@ -1,7 +1,7 @@
 import React from "react";
 import { Col } from "antd";
 import GridCard from "components/select/GridCard";
-import { GridCardsProps } from "components/select/types";
+import { GridCardsProps } from "types/props";
 
 function GridCards({ selectItem, selectList, setSelectList }: GridCardsProps) {
   return (

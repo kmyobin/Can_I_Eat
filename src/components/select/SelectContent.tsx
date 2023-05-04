@@ -3,7 +3,7 @@ import SelectListContainer from "components/select/SelectListContainer";
 import { selectArray } from "assets/fixtures/select";
 import styled from "styled-components";
 import SelectContainer from "components/select/SelectContainer";
-import { SelectItem } from "components/select/types";
+import { SelectItem } from "types/data";
 
 const Wrapper = styled.div`
   display: flex;

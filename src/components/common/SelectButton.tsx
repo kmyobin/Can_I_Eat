@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
-import { SelectButtonProps } from "components/common/types";
+import { SelectButtonProps } from "types/props";
 import {AppContext} from "./AppContextProvider";
 
 const StyledButton = styled(Button)<SelectButtonProps>`

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { SelectListProps, SelectItem } from "components/select/types";
+import { SelectListProps } from "types/props";
+import { SelectItem } from "types/data";
 import GridCard from "components/select/GridCard";
 
 const Wrapper = styled.div`

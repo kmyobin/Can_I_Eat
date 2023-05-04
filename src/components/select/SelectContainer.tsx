@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SelectedContainer from "components/select/SelectedContainer";
 import SelectButton from "components/common/SelectButton";
 import ResetButton from "components/common/ResetButton";
-import { SelectListProps } from "components/select/types";
+import { SelectListProps } from "types/props";
 
 const Wrapper = styled.div`
   justify-content: space-between;

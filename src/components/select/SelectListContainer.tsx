@@ -2,7 +2,9 @@ import React from "react";
 import { Row } from "antd";
 import GridCards from "components/select/GridCards";
 import styled from "styled-components";
-import { SelectItem, SelectListProps } from "components/select/types";
+import { SelectListProps } from "types/props";
+import { SelectItem } from "types/data";
+
 
 const SelectListWrapper = styled.div`
   width: 95%;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ResultCardJudgeProps, ResultCardProps} from "type/props";
+import {ResultCardJudgeProps, ResultCardProps} from "types/props";
 import ThumbUpImg from "assets/images/thumb-up.jpg"
 import ThumbDownImg from "assets/images/thumb-down.jpg"
 

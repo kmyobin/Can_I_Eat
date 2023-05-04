@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
-import { AppContextType } from "components/common/types";
-import {SearchResult} from "type/data";
+import { AppContextType } from "types/data";
+import {SearchResult} from "types/data";
 
 export const AppContext = createContext<AppContextType>({
   selectedList: [],

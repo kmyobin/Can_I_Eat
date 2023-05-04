@@ -1,4 +1,17 @@
-export interface FoodMaterialData {
+export type AppContextType = {
+    selectedList: string[];
+    setSelectedListHandler: (selectedList: string[]) => void;
+    searchResults: SearchResult[];
+    handleSearchResultsChange : (newSearchResults: SearchResult[]) => void;
+};
+export type SelectItem = {
+    id: number;
+    name: string;
+    src: string;
+    alt: string;
+    types: string[];
+};
+export type FoodMaterialData = {
     PRDLST_REPORT_NO: string;
     PRMS_DT: string;
     LCNS_NO: string;
@@ -49,7 +62,7 @@ export type FoodMaterialResponse = {
 }
 
 
-export interface FoodImageResponse {
+export type FoodImageResponse = {
     data: {
         body: {
             items: FoodImageData[]
@@ -57,7 +70,7 @@ export interface FoodImageResponse {
     }
 }
 
-export interface FoodImageData {
+export type FoodImageData = {
     item: {
         nutrient: string;
         rawmtrl: string;

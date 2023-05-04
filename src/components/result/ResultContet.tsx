@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ResultCard from "components/result/ResultCard";
 import ResultKeywordBox from "components/result/ResultKeywordBox";
 import {useParams} from "react-router-dom";
-import {rawMaterial, SearchResult} from "type/data";
+import {rawMaterial, SearchResult} from "types/data";
 import {AppContext} from "components/common/AppContextProvider";
 
 const Wrapper = styled.div`
