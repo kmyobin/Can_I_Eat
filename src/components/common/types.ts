@@ -1,5 +1,5 @@
 import { SelectItem } from "components/select/types";
-import {SearchResult} from "../../type/data";
+import {SearchResult} from "type/data";
 
 export type SelectButtonProps = { text?: string; selectList: SelectItem[] };
 export type AppContextType = {

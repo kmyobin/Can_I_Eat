@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ResultChipItemProps, ResultChipListProps} from "../../type/props";
+import {ResultChipItemProps, ResultChipListProps} from "type/props";
 
 const Wrapper = styled.div`
   display: flex;

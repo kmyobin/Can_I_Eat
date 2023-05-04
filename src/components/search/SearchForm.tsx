@@ -1,11 +1,11 @@
 import React, {memo, useContext, useState} from "react";
 import styled from "styled-components";
-import magnifyImg from '../../assets/images/magnify.png';
+import magnifyImg from 'assets/images/magnify.png';
 import axios from "axios";
-import {makeFoodImgURL, makeFoodRawMaterialURL} from "../../utils";
-import {FoodImageData, FoodImageResponse, FoodMaterialData, FoodMaterialResponse, SearchResult} from "../../type/data";
-import {SearchFormProps} from "../../type/props";
-import {AppContext} from "../common/AppContextProvider";
+import {makeFoodImgURL, makeFoodRawMaterialURL} from "utils";
+import {FoodImageData, FoodImageResponse, FoodMaterialData, FoodMaterialResponse, SearchResult} from "type/data";
+import {SearchFormProps} from "type/props";
+import {AppContext} from "components/common/AppContextProvider";
 
 const Wrapper = styled.div`
   display: flex;

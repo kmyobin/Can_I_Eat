@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../layout/Header/Header";
+import Header from "layout/Header/Header";
 import styled from "styled-components";
 
 const Wrapper = styled.div`

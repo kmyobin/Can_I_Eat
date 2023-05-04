@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import {SearchItemProps} from "../../type/props";
+import {SearchItemProps} from "type/props";
 
 const Wrapper = styled(Link)`
   display: flex;

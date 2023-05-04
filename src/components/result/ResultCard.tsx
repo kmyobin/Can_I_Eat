@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {ResultCardJudgeProps, ResultCardProps} from "../../type/props";
-import ThumbUpImg from "../../assets/images/thumb-up.jpg"
-import ThumbDownImg from "../../assets/images/thumb-down.jpg"
+import {ResultCardJudgeProps, ResultCardProps} from "type/props";
+import ThumbUpImg from "assets/images/thumb-up.jpg"
+import ThumbDownImg from "assets/images/thumb-down.jpg"
 
 const Wrapper = styled.div`
   display: flex;

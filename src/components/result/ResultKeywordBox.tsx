@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import ResultChipList from "./ResultChipList";
-import {ResultKeywordBoxProps} from "../../type/props";
+import ResultChipList from "components/result/ResultChipList";
+import {ResultKeywordBoxProps} from "type/props";
 
 const Wrapper = styled.div`
   display: flex;
