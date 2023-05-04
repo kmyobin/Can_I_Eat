@@ -29,7 +29,9 @@ const Wrapper = styled.div`
     border-radius: 10px;
     background: #ddd;
   }
-  
+  @media only screen and (max-width: 768px) {
+    width: 350px;
+  }
 `;
 
 const ResultChipItem = styled.div<ResultChipItemProps>`
@@ -54,7 +56,10 @@ const ResultChipItem = styled.div<ResultChipItemProps>`
   @media only screen and (max-width: 768px) {
     width: 64px;
     height: 30px;
+    margin: 0 auto;
+    
     font-size: 11px;
+    line-height: 30px;
   }
     
 `;

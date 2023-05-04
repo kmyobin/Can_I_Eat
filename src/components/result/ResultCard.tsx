@@ -21,10 +21,17 @@ const ResultCardImage = styled.img`
   }
 `;
 const ResultCardFoodName = styled.p`
+  width: 100%;
+  
   margin: 20px 0 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
   font-family: NotoSansKR-500;
   font-size: 36px;
-
+  
   @media only screen and (max-width: 768px) {
     font-size: 24px;
   }

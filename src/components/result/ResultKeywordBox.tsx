@@ -20,6 +20,7 @@ const ResultKeywordMessage = styled.div`
   
   width: 280px;
   height: 50px;
+  margin: 0 auto;
   margin-bottom: 40px;
   
   font-family: NotoSansKR-500;
