@@ -73,6 +73,9 @@ function ResultChipList({rawMaterials}:ResultChipListProps) {
                     <ResultChipItem key={rawMaterialName}
                                     isMatched={isMatched}
                                     title={rawMaterialName}
+                                    onClick={(e) => {
+                                        alert(e.currentTarget.textContent);
+                                    }}
                     >
                         {rawMaterialName}</ResultChipItem>
                 ))
