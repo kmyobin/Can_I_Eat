@@ -64,16 +64,15 @@
    <td align="center" ><sub><b>선택 페이지</b></sub><br /></td>
 </tr>
     <td align="center">
-      <img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236099018-072ae9bf-e2ec-42da-8a3d-70f57715dd09.png">
+      <img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236673988-b7552f04-8315-40b7-b57b-c7248b4a364c.png">
     </td>
-    <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236099116-ce73a463-a2e1-46b7-9ad9-cb9f37c215ce.png"></td>
+    <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236674009-bcc394cc-bdd8-43c1-bcab-f8ba32148cdc.png"></td>
 </tr>
    <td align="center" ><sub><b>검색 페이지</b></sub><br /></td>
    <td align="center" ><sub><b>결과 페이지</b></sub><br /></td>
 </tr>
-   <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/231055234-a5fa3da3-48d1-4603-aefd-60357acc5609.png"></td>
-   <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/231055275-7e8efa06-1a7f-4d86-afa6-261d09996cb5.png">
-</td>
+   <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236674058-aed9f5f2-d0bd-4c0b-9f0c-29f322f55b62.png"></td>
+   <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236674086-1b698481-0085-4410-b057-1ebed2f0c1eb.png"></td>
 </table>
 
 
