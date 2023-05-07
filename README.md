@@ -56,7 +56,9 @@
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
 
 
-## 💻 화면 구성
+## 🖥️ 화면 구성
+
+### 💻 노트북
 <table>
 <tbody>
 <tr>
@@ -75,7 +77,25 @@
    <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236674086-1b698481-0085-4410-b057-1ebed2f0c1eb.png"></td>
 </table>
 
-
+### 📱 모바일
+<table>
+<tbody>
+<tr>
+   <td align="center" ><sub><b>메인 페이지</b></sub><br /></td>
+   <td align="center" ><sub><b>선택 페이지</b></sub><br /></td>
+   <td align="center" ><sub><b>검색 페이지</b></sub><br /></td>
+   <td align="center" ><sub><b>결과 페이지</b></sub><br /></td>
+</tr>
+    <td align="center">
+      <img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236679076-0aa270b6-8910-4872-8cf7-95b7206abb95.png">
+    </td>
+    <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236679052-b1dd5ad6-99f3-4140-88ad-383842992765.png"></td>
+    <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236679109-c4e79686-fdc3-4c6c-bf34-4ca239d78fe0.png"></td>
+    <td align="center"><img width="100%" alt="image" src="https://user-images.githubusercontent.com/64712993/236679119-af8138d2-e244-4052-847f-303546df687a.png"></td>
+</table>
 
 ## 〰 UI/UX
 [Figma](https://www.figma.com/file/Vw8d64uRmCZfva4M3bN8FI/CAN-I-EAT%3F?type=design&node-id=0-1&t=PuBtLaLcJ1LrAyAT-0)
+
+## 📹 시연 영상
+[![시연 영상](http://img.youtube.com/vi/6P0ObvSxi2E/0.jpg)](https://youtu.be/6P0ObvSxi2E?t=0s)
