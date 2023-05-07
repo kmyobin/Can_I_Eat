@@ -13,9 +13,9 @@ const StyledButton = styled(Button)`
   background-color: #00b578;
   color: white;
   font-family: NotoSansKR-500;
-  width: 351px; //200px;
+  width: 351px;
   height: 50px;
-  border-radius: 1000px; //20px;
+  border-radius: 1000px;
   font-size: 18px;
 
   @media only screen and (max-width: 768px) {

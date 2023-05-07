@@ -17,7 +17,7 @@ const StyledButton = styled(Button)<SelectButtonProps>`
     selectList.length === 0 ? "rgba(0, 181, 120, 0.25)" : "#00b578"};
   color: white;
   font-family: NotoSansKR-500;
-  width: 351px; //200px;
+  width: 351px;
   height: 50px;
   font-size: 18px;
   text-align: center;

@@ -14,9 +14,8 @@ const Style = {
     flex-direction: column;
   `,
   TextArea: styled.div`
-    //margin: 0 auto;
     font-family: NotoSansKR-500;
-    font-size: 36px; //1.2rem;
+    font-size: 36px;
     line-height: 50px;
     text-align: center;
     margin: 40px 0px;
@@ -28,7 +27,6 @@ const Style = {
     }
   `,
   ButtonArea: styled.div`
-    //width: 100%;
     position: fixed;
     bottom: 95px;
     @media only screen and (max-width: 768px) {

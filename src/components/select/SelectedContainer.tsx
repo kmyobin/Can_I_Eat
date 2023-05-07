@@ -20,8 +20,8 @@ const Wrapper = styled.div`
 
   & > * {
     // Wrapper의 자식 컴포넌트는 모두 크기가 55으로 고정
-    max-width: 100px; //110px; //55px;
-    max-height: 100px; //110px; //55px;
+    max-width: 100px;
+    max-height: 100px;
     margin: 5px;
     margin-right: 25px;
     margin-bottom: 20px;
@@ -33,9 +33,9 @@ const Wrapper = styled.div`
   }
 
   &::-webkit-scrollbar {
-    height: 8px; //5px; // 수평 스크롤바
+    height: 8px; // 수평 스크롤바
     @media only screen and (max-width: 768px) {
-      height: 5px; // 수평 스크롤바
+      height: 5px;
     }
   }
 

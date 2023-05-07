@@ -8,8 +8,8 @@ import { SelectListProps } from "types/props";
 const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
-  max-width: 500px; //351px; //260px;
-  min-height: 650px; //350px;
+  max-width: 500px;
+  min-height: 650px;
 
   position: relative; // 버튼 하단 고정
 
@@ -18,15 +18,15 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    max-width: 300px; //155px;
-    min-height: 200px; //150px;
+    max-width: 300px;
+    min-height: 200px;
   }
 `;
 
 const TextArea = styled.div`
   font-family: NotoSansKR-500;
   font-size: 36px;
-  margin-bottom: 150px; //80px;
+  margin-bottom: 150px;
 
   text-align: center;
 

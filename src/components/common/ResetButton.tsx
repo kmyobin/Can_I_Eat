@@ -15,9 +15,9 @@ const StyledButton = styled(Button)`
   color: #00b578;
   font-family: NotoSansKR-400;
   border-radius: 20px;
-  width: 88px; //65px;
-  height: 40px; //25px;
-  font-size: 17px; //10px;
+  width: 88px;
+  height: 40px;
+  font-size: 17px;
   margin-bottom: 25px;
   /* 글씨 가운데 정렬 */
   display: flex;
