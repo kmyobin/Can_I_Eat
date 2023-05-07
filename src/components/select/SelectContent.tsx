@@ -34,19 +34,19 @@ const TextWrapper = styled.div`
 
 const ScrollbarsWrapper = styled.div`
   max-height: 80vh;
-  //max-width: 745px; //35vw;
   width: 50%;
   overflow-y: auto;
-  //background-color: #bbbbbb; // 확인용
 
   @media only screen and (max-width: 768px) {
     max-width: 90%;
     width: 100%;
     margin-bottom: 10px;
+
+    height: 70%;
   }
 
   &::-webkit-scrollbar {
-    width: 8px; //5px; // 수직 스크롤바
+    width: 8px; // 수직 스크롤바
     @media only screen and (max-width: 768px) {
       width: 5px; // 수직 스크롤바
     }
@@ -69,16 +69,16 @@ const ScrollbarsWrapper = styled.div`
 const SelectWrapper = styled.div`
   max-height: 80vh;
   width: 50%;
-  // background-color: #bbbbbb;
   display: flex;
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 768px) {
-    max-width: 100vw;
+    width: 100%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 `;
 
