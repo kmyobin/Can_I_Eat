@@ -5,7 +5,7 @@ import { SelectItem } from "types/data";
 import GridCard from "components/select/GridCard";
 
 const Wrapper = styled.div`
-  width: 100%; //500px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
