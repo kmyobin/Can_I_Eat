@@ -41,7 +41,7 @@ const Image = styled.img`
 
 const Text = styled.div`
   position: absolute;
-  font-size: 10px; //6px;
+  font-size: 20px; //10px; //6px;
   top: 50%;
   left: 48.7%; //50%;
   text-align: center;

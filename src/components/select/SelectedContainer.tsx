@@ -19,9 +19,11 @@ const Wrapper = styled.div`
 
   & > * {
     // Wrapper의 자식 컴포넌트는 모두 크기가 55으로 고정
-    max-width: 55px;
-    max-height: 55px;
+    max-width: 100px; //110px; //55px;
+    max-height: 100px; //110px; //55px;
     margin: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
     @media only screen and (max-width: 768px) {
       max-width: 40px;
       max-height: 40px;

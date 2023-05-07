@@ -13,8 +13,14 @@ const StyledButton = styled(Button)`
   background-color: #00b578;
   color: white;
   font-family: NotoSansKR-500;
-  width: 200px;
-  border-radius: 20px;
+  width: 351px; //200px;
+  height: 50px;
+  border-radius: 1000px; //20px;
+  font-size: 18px;
+
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+  }
 `;
 
 function StartButton({ text }: StartButtonProps) {

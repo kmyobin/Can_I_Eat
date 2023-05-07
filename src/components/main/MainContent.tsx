@@ -15,10 +15,15 @@ const Style = {
   `,
   TextArea: styled.div`
     //margin: 0 auto;
-    font-family: NotoSansKR-700;
-    font-size: 1.2rem;
+    font-family: NotoSansKR-500;
+    font-size: 36px; //1.2rem;
+    line-height: 50px;
     text-align: center;
     margin: 40px 0px;
+    @media only screen and (max-width: 768px) {
+      font-size: 24px;
+      line-height: 60px;
+    }
   `,
   ButtonArea: styled.div`
     //width: 100%;
@@ -64,7 +69,9 @@ function MainContent() {
       <Style.TextArea>
         나는 {intro[currentIndex].name}인데
         <br />
-        <span style={{ color: "#999999" }}>{intro[currentIndex].food}</span>
+        <span style={{ color: "#999999", fontFamily: "NotoSansKR-400" }}>
+          {intro[currentIndex].food}
+        </span>
         <br />
         {movingText}
       </Style.TextArea>

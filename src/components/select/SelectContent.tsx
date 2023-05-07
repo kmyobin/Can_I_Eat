@@ -57,7 +57,7 @@ const ScrollbarsWrapper = styled.div`
 
 const SelectWrapper = styled.div`
   max-height: 80vh;
-  max-width: 40vw;
+  max-width: 530px; //40vw;
   // background-color: #bbbbbb;
 
   @media only screen and (max-width: 768px) {

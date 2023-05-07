@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { SelectButtonProps } from "types/props";
-import {AppContext} from "./AppContextProvider";
+import { AppContext } from "./AppContextProvider";
 
 const StyledButton = styled(Button)<SelectButtonProps>`
   &:where(.css-dev-only-do-not-override-1xusghl).ant-btn-default:not(
@@ -17,7 +17,9 @@ const StyledButton = styled(Button)<SelectButtonProps>`
     selectList.length === 0 ? "rgba(0, 181, 120, 0.25)" : "#00b578"};
   color: white;
   font-family: NotoSansKR-500;
-  width: 200px;
+  width: 351px; //200px;
+  height: 50px;
+  font-size: 18px;
   text-align: center;
   pointer-events: ${({ selectList }) =>
     selectList.length === 0 ? "none" : "auto"}; // 클릭 안되게
