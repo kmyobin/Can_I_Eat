@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     min-height: 60px; // 스크롤바 띄워놓기
-    width: 280px;
+    //width: 280px;
   }
 
   & > * {

@@ -34,7 +34,7 @@ const TextArea = styled.div`
   @media only screen and (max-width: 768px) {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 const ButtonWrapper = styled.div`
