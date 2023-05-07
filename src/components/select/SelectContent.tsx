@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   height: 100%;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 `;
 
@@ -31,12 +34,14 @@ const TextWrapper = styled.div`
 
 const ScrollbarsWrapper = styled.div`
   max-height: 80vh;
-  max-width: 35vw;
+  //max-width: 745px; //35vw;
+  width: 50%;
   overflow-y: auto;
   //background-color: #bbbbbb; // 확인용
 
   @media only screen and (max-width: 768px) {
     max-width: 90%;
+    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -60,11 +65,16 @@ const ScrollbarsWrapper = styled.div`
 
 const SelectWrapper = styled.div`
   max-height: 80vh;
-  max-width: 500px; //40vw;
+  width: 50%;
   // background-color: #bbbbbb;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media only screen and (max-width: 768px) {
     max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
   }
 `;

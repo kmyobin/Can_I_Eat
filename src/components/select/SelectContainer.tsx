@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 500px;
+  width: 100%;
   min-height: 650px;
 
   position: relative; // 버튼 하단 고정
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     max-width: 300px;
-    min-height: 200px;
+    min-height: 210px;
   }
 `;
 
