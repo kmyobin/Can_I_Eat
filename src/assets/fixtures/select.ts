@@ -205,7 +205,7 @@ export const selectArray = [
     name: "고등어",
     src: 고등어,
     alt: "고등어",
-    types: ["히스타민", "고등어", "어육"],
+    types: ["히스타민", "고등어", "어육", "연육"],
   },
   {
     id: 24,
