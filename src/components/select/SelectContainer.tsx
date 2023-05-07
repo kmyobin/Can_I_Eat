@@ -8,7 +8,7 @@ import { SelectListProps } from "types/props";
 const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
-  max-width: 530px; //351px; //260px;
+  max-width: 500px; //351px; //260px;
   min-height: 650px; //350px;
 
   position: relative; // 버튼 하단 고정
@@ -18,8 +18,8 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    max-width: 155px;
-    min-height: 150px;
+    max-width: 300px; //155px;
+    min-height: 200px; //150px;
   }
 `;
 

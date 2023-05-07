@@ -15,18 +15,20 @@ const StyledButton = styled(Button)`
   color: #00b578;
   font-family: NotoSansKR-400;
   border-radius: 20px;
-  width: 65px;
-  height: 25px;
-  font-size: 10px;
+  width: 88px; //65px;
+  height: 40px; //25px;
+  font-size: 17px; //10px;
+  margin-bottom: 25px;
   /* 글씨 가운데 정렬 */
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media only screen and (max-width: 768px) {
-    width: 50px;
+    width: 55px;
     height: 20px;
     font-size: 8px;
+    margin-bottom: 12px;
   }
 `;
 function ResetButton({ selectList, setSelectList }: SelectListProps) {

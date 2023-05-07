@@ -28,7 +28,7 @@ const StyledButton = styled(Button)<SelectButtonProps>`
     font-family: NotoSansKR-400;
     width: 65px;
     height: 25px;
-    font-size: 11px;
+    font-size: 12px;
   }
 `;
 

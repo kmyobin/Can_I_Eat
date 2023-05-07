@@ -20,15 +20,20 @@ const Style = {
     line-height: 50px;
     text-align: center;
     margin: 40px 0px;
+    margin-bottom: 150px;
     @media only screen and (max-width: 768px) {
       font-size: 24px;
       line-height: 60px;
+      margin-bottom: 150px;
     }
   `,
   ButtonArea: styled.div`
     //width: 100%;
     position: fixed;
-    bottom: 50px;
+    bottom: 95px;
+    @media only screen and (max-width: 768px) {
+      bottom: 155px;
+    }
   `,
 };
 

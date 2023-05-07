@@ -54,6 +54,9 @@ const Text = styled.div`
   ${ImageWrapper}:hover & {
     opacity: 1;
   }
+  @media only screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 function GridCard({ selectItem, selectList, setSelectList }: GridCardsProps) {

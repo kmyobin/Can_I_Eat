@@ -41,7 +41,10 @@ const ScrollbarsWrapper = styled.div`
   }
 
   &::-webkit-scrollbar {
-    width: 5px; // 수직 스크롤바
+    width: 8px; //5px; // 수직 스크롤바
+    @media only screen and (max-width: 768px) {
+      width: 5px; // 수직 스크롤바
+    }
   }
 
   &::-webkit-scrollbar-track {

@@ -5,7 +5,7 @@ import { SelectItem } from "types/data";
 import GridCard from "components/select/GridCard";
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 500px;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     min-height: 60px; // 스크롤바 띄워놓기
+    width: 280px;
   }
 
   & > * {
@@ -22,16 +23,20 @@ const Wrapper = styled.div`
     max-width: 100px; //110px; //55px;
     max-height: 100px; //110px; //55px;
     margin: 5px;
-    margin-right: 10px;
+    margin-right: 25px;
     margin-bottom: 20px;
     @media only screen and (max-width: 768px) {
-      max-width: 40px;
-      max-height: 40px;
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 8px;
     }
   }
 
   &::-webkit-scrollbar {
-    height: 5px; // 수평 스크롤바
+    height: 8px; //5px; // 수평 스크롤바
+    @media only screen and (max-width: 768px) {
+      height: 5px; // 수평 스크롤바
+    }
   }
 
   &::-webkit-scrollbar-track {
