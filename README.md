@@ -96,3 +96,6 @@
 
 ## 〰 UI/UX
 [Figma](https://www.figma.com/file/Vw8d64uRmCZfva4M3bN8FI/CAN-I-EAT%3F?type=design&node-id=0-1&t=PuBtLaLcJ1LrAyAT-0)
+
+## 📹 시연 영상
+[![시연 영상](http://img.youtube.com/vi/6P0ObvSxi2E/0.jpg)](https://youtu.be/6P0ObvSxi2E?t=0s)
