@@ -26,6 +26,7 @@ const Style = {
     }
   `,
   Logo: styled.div`
+    cursor: pointer;
     @media only screen and (min-width: 769px) {
       // 노트북, 데스크탑
       float: left;
@@ -56,13 +57,18 @@ const Style = {
 
 function Header() {
   const navigate = useNavigate();
-  const onClickUndo = () => {
+  function onClickUndo() {
     navigate("/");
-  };
+  }
+
+  function onClickLogo() {
+    navigate("/");
+  }
+
   let Lo = window.location.href;
   return (
     <Style.Header>
-      <Style.Logo>Can I Eat?</Style.Logo>
+      <Style.Logo onClick={onClickLogo}>Can I Eat?</Style.Logo>
       <Style.Redo>
         {/* 선택 페이지나 결과 페이지에서만 Redo 버튼 활성화 */}
         {(Lo.includes("/select") ||
