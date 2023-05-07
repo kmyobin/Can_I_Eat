@@ -60,6 +60,9 @@ const ScrollbarsWrapper = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: rgba(0, 181, 120, 0.25);
     border-radius: 24px;
+    :hover {
+      background-color: rgba(0, 181, 120, 1);
+    }
   }
 `;
 
