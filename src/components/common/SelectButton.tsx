@@ -13,16 +13,16 @@ const StyledButton = styled(Button)<SelectButtonProps>`
     color: white;
   }
   border: none; // 기본 테두리 없앰
-  background-color: ${({ selectList }) =>
-    selectList.length === 0 ? "rgba(0, 181, 120, 0.25)" : "#00b578"};
+  background-color: ${({ selectlist }) =>
+    selectlist.length === 0 ? "rgba(0, 181, 120, 0.25)" : "#00b578"};
   color: white;
   font-family: NotoSansKR-500;
   width: 351px;
   height: 50px;
   font-size: 18px;
   text-align: center;
-  pointer-events: ${({ selectList }) =>
-    selectList.length === 0 ? "none" : "auto"}; // 클릭 안되게
+  pointer-events: ${({ selectlist }) =>
+    selectlist.length === 0 ? "none" : "auto"}; // 클릭 안되게
   box-shadow: none; // 버튼 클릭 시 효과 없앰
   @media only screen and (max-width: 768px) {
     font-family: NotoSansKR-400;
@@ -32,19 +32,19 @@ const StyledButton = styled(Button)<SelectButtonProps>`
   }
 `;
 
-function SelectButton({ text, selectList }: SelectButtonProps) {
+function SelectButton({ text, selectlist }: SelectButtonProps) {
   const { selectedList, setSelectedListHandler } = useContext(AppContext);
   const navigate = useNavigate();
 
   function onClickButton() {
-    let typesList = selectList.map((item) => item.types).flat();
+    let typesList = selectlist.map((item) => item.types).flat();
     //console.log(typesList);
     setSelectedListHandler(typesList);
     navigate("/search"); // 다음 페이지로 이동
   }
 
   return (
-    <StyledButton selectList={selectList} onClick={onClickButton}>
+    <StyledButton selectlist={selectlist} onClick={onClickButton}>
       {text}
     </StyledButton>
   );

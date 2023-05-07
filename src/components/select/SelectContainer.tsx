@@ -62,7 +62,7 @@ function SelectContainer({ selectList, setSelectList }: SelectListProps) {
         setSelectList={setSelectList}
       />
       <ButtonWrapper2>
-        <SelectButton text="확정 ✅" selectList={selectList} />
+        <SelectButton text="확정 ✅" selectlist={selectList} />
       </ButtonWrapper2>
     </Wrapper>
   );
