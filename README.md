@@ -23,7 +23,7 @@
   <tbody>
       <tr>
       <td align="center">
-          <img src="https://avatars.githubusercontent.com/u/64712993?v=4" width="50%;" alt=""/>
+          <img src="https://avatars.githubusercontent.com/u/64712993?v=4" width="200px;" alt=""/>
             <br />
             <sub>
             <b><a href="https://github.com/kmyobin">김효빈</a></b>
@@ -31,7 +31,7 @@
          <br />
       </td>
       <td align="center">
-          <img src="https://avatars.githubusercontent.com/u/107387817?v=4" width="50%;" alt=""/>
+          <img src="https://avatars.githubusercontent.com/u/107387817?v=4" width="200px;" alt=""/>
             <br />
             <sub>
             <b><a href="https://github.com/doggopawer">김동현</a></b>
